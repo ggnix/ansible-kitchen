@@ -1,0 +1,9 @@
+---
+username: kitchen
+ssh_key: "/home/gleb/apache_role/.kitchen/docker_id_rsa"
+image_id: c8586bbd5f65
+container_id: 229cae02b1e3891bbe7f1a172b9a092477ab2a401f83fe6c10ab86a400636338
+hostname: localhost
+port: 32768
+last_action: create
+last_error: RuntimeError
