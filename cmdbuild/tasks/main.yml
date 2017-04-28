@@ -1,5 +1,6 @@
 ---
-# This task installs and enables apache on webservers
+# Java installation
+
 - name: Download Java
   command: "wget -q -O {{java_archive}} --no-check-certificate --no-cookies --header 'Cookie: oraclelicense=accept-securebackup-cookie' {{download_url}} creates={{java_archive}}"
 
@@ -14,3 +15,38 @@
 
 - name: Clean up
   file: state=absent path={{java_archive}}
+
+# Tomcat installation and configuration
+
+- name: Download tomcat
+  get_url: url=http://archive.apache.org/dist/tomcat/tomcat-8/v{{tomcat_version}}/bin/apache-tomcat-{{tomcat_version}}.tar.gz dest=/tmp/apache-tomcat-{{tomcat_version}}.tar.gz
+
+- name: opt directory
+  file: state=directory path=/opt/tomcat
+
+- name: Extract tomcat
+  command: '/bin/tar xzvf /tmp/apache-tomcat-{{tomcat_version}}.tar.gz -C /opt/tomcat --strip-components=1'
+
+- name: add group "tomcat"
+  group: name=tomcat
+
+- name: add user "tomcat"
+  user: name=tomcat group=tomcat home=/opt/tomcat createhome=no
+
+- name: Change ownership of Tomcat installation
+  file: path=/opt/tomcat/ owner=tomcat group=tomcat state=directory recurse=yes
+
+- name: Remove docs apps
+  file: path=/opt/tomcat/webapps/docs state=absent
+
+- name: Remove examples apps
+  file: path=/opt/tomcat/webapps/examples state=absent
+
+- name: Install Tomcat init script
+  copy: src=tomcat-initscript.sh dest=/etc/init.d/tomcat mode=0755
+
+- name: Start Tomcat
+  service: name=tomcat state=started enabled=yes
+
+- name: wait for tomcat to start
+  wait_for: port={{http_port}}

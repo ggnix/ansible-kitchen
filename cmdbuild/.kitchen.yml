@@ -18,6 +18,9 @@ verifier:
   name: inspec
 suites:
    - name: cmdbuild
+     driver:
+       forward:
+         - 8080:8080     
      provisioner:
-        name: ansible_playbook
-        playbook: test/integration/default.yml
+       name: ansible_playbook
+       playbook: test/integration/default.yml
