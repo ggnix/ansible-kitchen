@@ -1,0 +1,32 @@
+I, [2017-04-24T14:57:17.613102 #21738]  INFO -- ansible-playbook-centos-71: -----> Converging <ansible-playbook-centos-71>...
+I, [2017-04-24T14:57:17.613517 #21738]  INFO -- ansible-playbook-centos-71: Preparing files for transfer
+I, [2017-04-24T14:57:17.613568 #21738]  INFO -- ansible-playbook-centos-71: Preparing playbook
+E, [2017-04-24T14:57:17.613764 #21738] ERROR -- ansible-playbook-centos-71: Converge failed on instance <ansible-playbook-centos-71>.
+E, [2017-04-24T14:57:17.613848 #21738] ERROR -- ansible-playbook-centos-71: ------Exception-------
+E, [2017-04-24T14:57:17.613864 #21738] ERROR -- ansible-playbook-centos-71: Class: RuntimeError
+E, [2017-04-24T14:57:17.613875 #21738] ERROR -- ansible-playbook-centos-71: Message: No playbook found or specified!  Please either set a playbook in your .kitchen.yml config, or create a default playbook in test/integration/<suite_name>/ansible/default.yml, test/integration/<suite_name>/default.yml, test/integration/default.yml or in default.yml in the top level
+E, [2017-04-24T14:57:17.613887 #21738] ERROR -- ansible-playbook-centos-71: ----------------------
+E, [2017-04-24T14:57:17.613896 #21738] ERROR -- ansible-playbook-centos-71: ------Backtrace-------
+E, [2017-04-24T14:57:17.613905 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/kitchen-ansible-0.46.4/lib/kitchen/provisioner/ansible/config.rb:91:in `block in <class:Config>'
+E, [2017-04-24T14:57:17.613915 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/test-kitchen-1.16.0/lib/kitchen/lazy_hash.rb:135:in `proc_or_val'
+E, [2017-04-24T14:57:17.613924 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/test-kitchen-1.16.0/lib/kitchen/lazy_hash.rb:76:in `[]'
+E, [2017-04-24T14:57:17.613933 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/kitchen-ansible-0.46.4/lib/kitchen/provisioner/ansible/config.rb:160:in `[]'
+E, [2017-04-24T14:57:17.613942 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/test-kitchen-1.16.0/lib/kitchen/lazy_hash.rb:76:in `[]'
+E, [2017-04-24T14:57:17.613951 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/kitchen-ansible-0.46.4/lib/kitchen/provisioner/ansible_playbook.rb:612:in `playbook'
+E, [2017-04-24T14:57:17.613960 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/kitchen-ansible-0.46.4/lib/kitchen/provisioner/ansible_playbook.rb:962:in `prepare_playbook'
+E, [2017-04-24T14:57:17.613971 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/kitchen-ansible-0.46.4/lib/kitchen/provisioner/ansible_playbook.rb:266:in `create_sandbox'
+E, [2017-04-24T14:57:17.613980 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/test-kitchen-1.16.0/lib/kitchen/provisioner/base.rb:65:in `call'
+E, [2017-04-24T14:57:17.613989 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:384:in `block in converge_action'
+E, [2017-04-24T14:57:17.613998 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:527:in `synchronize_or_call'
+E, [2017-04-24T14:57:17.614007 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:489:in `block in action'
+E, [2017-04-24T14:57:17.614016 #21738] ERROR -- ansible-playbook-centos-71: /usr/lib/ruby/2.3.0/benchmark.rb:293:in `measure'
+E, [2017-04-24T14:57:17.614025 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:488:in `action'
+E, [2017-04-24T14:57:17.614034 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:380:in `converge_action'
+E, [2017-04-24T14:57:17.614043 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:359:in `block in transition_to'
+E, [2017-04-24T14:57:17.614052 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `each'
+E, [2017-04-24T14:57:17.614071 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `transition_to'
+E, [2017-04-24T14:57:17.614081 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:135:in `converge'
+E, [2017-04-24T14:57:17.614091 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `public_send'
+E, [2017-04-24T14:57:17.614100 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2017-04-24T14:57:17.614109 #21738] ERROR -- ansible-playbook-centos-71: /var/lib/gems/2.3.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2017-04-24T14:57:17.614117 #21738] ERROR -- ansible-playbook-centos-71: ----End Backtrace-----

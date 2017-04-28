@@ -1,0 +1,23 @@
+---
+driver:
+  name: docker
+  provision_command:
+  - yum update -y
+  - yum install -y wget
+  - yum install -y pexpect
+
+provisioner:
+  name: ansible_playbook
+  hosts: localhost
+  require_chef_for_busser: false
+  require_ruby_for_busser: false
+
+platforms:
+  - name: centos-6.6
+verifier:
+  name: inspec
+suites:
+   - name: cmdbuild
+     provisioner:
+        name: ansible_playbook
+        playbook: test/integration/default.yml

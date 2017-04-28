@@ -1,0 +1,3 @@
+I, [2017-04-28T11:49:11.104137 #22244]  INFO -- Kitchen: -----> Starting Kitchen (v1.16.0)
+I, [2017-04-28T11:49:11.570446 #22244]  INFO -- Kitchen: -----> Destroying <cmdbuild-centos-66>...
+I, [2017-04-28T11:49:11.573011 #22244]  INFO -- Kitchen: -----> Kitchen is finished. (0m0.47s)
