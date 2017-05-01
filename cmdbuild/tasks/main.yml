@@ -73,9 +73,6 @@
       - postgresql94
       - postgresql94-server
       - postgresql94-devel
-#      - python-psycopg2
-#      - postgresql-contrib
-#      - libselinux-python
 
   - name: Postgres initdb
     shell: "/usr/pgsql-9.4/bin/initdb --encoding=UTF-8 --no-locale -D /var/lib/pgsql/9.4/data/"
@@ -141,3 +138,56 @@
 - name: wait for tomcat to start
   wait_for: port={{ http_port }}
 
+# Ready2Use patch
+
+- name: Extract patch
+  unarchive: src={{ item }} dest=/tmp copy=no validate_certs=no
+  with_items:
+    - "{{ Ready2Use_URL }}"
+
+- name: Move libs
+  copy: src=/tmp/cmdbuild-ready2use-1.1/lib/{{ item }} dest=/opt/tomcat/lib remote_src=yes 
+  with_items: 
+    - "pdfbox-2.0.2.jar"
+    - "javase-2.1.jar"
+    - "core-2.1.jar"
+
+- name: Tomcat stop
+  service: name=tomcat state=stopped
+
+- name: install prerequisites
+  yum: name={{ item }} state=latest
+  with_items:
+    - python-psycopg2
+    - python-pip
+
+- name: Create database cmdbuild
+  postgresql_db: name=cmdbuild
+
+- name: Pexpect library
+  pip: name=https://pypi.python.org/packages/source/p/pexpect/pexpect-3.3.tar.gz
+
+- name: Shark schema 
+  command: "psql -U postgres -p 5432 -a -f /opt/tomcat/webapps/cmdbuild/WEB-INF/sql/shark_schema/01_shark_user.sql"
+
+- expect:
+    command: bash /tmp/cmdbuild-ready2use-1.1/bin/setup.sh
+    responses:
+      'host:': 'localhost'
+      'port:': '5432'
+      'username:': 'postgres'
+      'password required\? \(true/false\)': 'false'
+      'database:': 'cmdbuild'
+      'database with data\? \(true/false\)': 'true'
+      'root:': '/opt/tomcat/webapps/cmdbuild'
+      'above is correct\? \(true/false\)': 'true'
+    timeout: 120
+
+- name: Fix permissions
+  file: dest=/opt/tomcat/webapps/cmdbuild owner=tomcat group=tomcat recurse=yes 
+
+- name: Start Tomcat
+  service: name=tomcat state=started
+
+- name: wait for tomcat to start
+  wait_for: port={{ http_port }} 

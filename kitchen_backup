@@ -4,6 +4,7 @@ driver:
   provision_command:
   - yum update -y
   - yum install -y wget
+  - yum install -y pexpect
 
 provisioner:
   name: ansible_playbook

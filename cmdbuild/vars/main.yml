@@ -10,4 +10,5 @@ postgre_repo_v6: http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-centos9
 JDBC_URL: https://jdbc.postgresql.org/download/postgresql-9.4.1208.jar
 CMDBUILD_VER: 2.4.3
 CMDBUILD_URL: https://sourceforge.net/projects/cmdbuild/files/2.4.3/cmdbuild-2.4.3.zip 
-SHARK_URL: https://sourceforge.net/projects/cmdbuild/files/2.4.3/shark-cmdbuild-2.4.3.zip 
+SHARK_URL: https://sourceforge.net/projects/cmdbuild/files/2.4.3/shark-cmdbuild-2.4.3.zip
+Ready2Use_URL: https://sourceforge.net/projects/cmdbuild/files/2.4.3/cmdbuild-ready2use-1.1.zip/download 
