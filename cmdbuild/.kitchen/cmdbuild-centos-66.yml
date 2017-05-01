@@ -2,8 +2,8 @@
 username: kitchen
 ssh_key: /home/ec2-user/ansible_kitchen/cmdbuild/.kitchen/docker_id_rsa
 image_id: 1f3d4e5564d0
-container_id: f75f45b50ceb4e589c0d8c4bd889812a38043bd3621bbd4f7cb27a5f79c0b51a
+container_id: ef35d6cb0a38b3309a01598974acc63f0bf64089b36d6f1f97be57a855292a66
 hostname: localhost
-port: 32779
+port: 32789
 last_action: verify
 last_error: 

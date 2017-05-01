@@ -1,109 +1,101 @@
 #!/bin/bash
+#
+# tomcat8
+#
+# chkconfig: - 80 20
+#
+### BEGIN INIT INFO
+# Provides: tomcat8
+# Required-Start: $network $syslog
+# Required-Stop: $network $syslog
+# Default-Start:
+# Default-Stop:
+# Description: Tomcat 8
+# Short-Description: start and stop tomcat
+### END INIT INFO
 
-# chkconfig: 345 99 28
-# description: Starts/Stops Apache Tomcat
-
+## Source function library.
+#. /etc/rc.d/init.d/functions
 export JAVA_HOME=/opt/jdk1.8.0_05/jre
-
+export JAVA_OPTS="-Dfile.encoding=UTF-8 \
+  -Dnet.sf.ehcache.skipUpdateCheck=true \
+  -XX:+UseConcMarkSweepGC \
+  -XX:+CMSClassUnloadingEnabled \
+  -XX:+UseParNewGC \
+  -XX:MaxPermSize=128m \
+  -Xms512m -Xmx512m"
 export PATH=$JAVA_HOME/bin:$PATH
-
-export CATALINA_HOME=/opt/tomcat 
-
-export CATALINA_BASE=/opt/tomcat
-
-export TOMCAT_USER=tomcat
+TOMCAT_HOME=/opt/tomcat
+TOMCAT_USER=tomcat
+SHUTDOWN_WAIT=20
 
 tomcat_pid() {
-        echo `ps -fe | grep $CATALINA_BASE | grep -v grep | tr -s " "|cut -d" " -f2`
+  echo `ps aux | grep org.apache.catalina.startup.Bootstrap | grep -v grep | awk '{ print $2 }'`
 }
- 
+
 start() {
   pid=$(tomcat_pid)
-  if [ -n "$pid" ]
+  if [ -n "$pid" ] 
   then
-    echo -e "\e[00;31mTomcat is already running (pid: $pid)\e[00m"
+    echo "Tomcat is already running (pid: $pid)"
   else
     # Start tomcat
-    echo -e "\e[00;32mStarting tomcat\e[00m"
-    #ulimit -n 100000
-    #umask 007
-    #/bin/su -p -s /bin/sh tomcat
-        if [ `user_exists $TOMCAT_USER` = "1" ]
-        then
-                su $TOMCAT_USER -c $CATALINA_HOME/bin/startup.sh
-        else
-                sh $CATALINA_HOME/bin/startup.sh
-        fi
-        status
+    echo "Starting tomcat"
+    ulimit -n 100000
+    umask 007
+    /bin/su -p -s /bin/sh $TOMCAT_USER $TOMCAT_HOME/bin/startup.sh
   fi
+
+
   return 0
 }
- 
-status(){
-          pid=$(tomcat_pid)
-          if [ -n "$pid" ]; then echo -e "\e[00;32mTomcat is running with pid: $pid\e[00m"
-          else echo -e "\e[00;31mTomcat is not running\e[00m"
-          fi
-}
- 
+
 stop() {
   pid=$(tomcat_pid)
   if [ -n "$pid" ]
   then
-    echo -e "\e[00;31mStoping Tomcat\e[00m"
-    #/bin/su -p -s /bin/sh tomcat
-        sh $CATALINA_HOME/bin/shutdown.sh
- 
+    echo "Stoping Tomcat"
+    /bin/su -p -s /bin/sh $TOMCAT_USER $TOMCAT_HOME/bin/shutdown.sh
+
     let kwait=$SHUTDOWN_WAIT
     count=0;
     until [ `ps -p $pid | grep -c $pid` = '0' ] || [ $count -gt $kwait ]
     do
-      echo -n -e "\n\e[00;31mwaiting for processes to exit\e[00m";
+      echo -n -e "\nwaiting for processes to exit";
       sleep 1
       let count=$count+1;
     done
- 
+
     if [ $count -gt $kwait ]; then
-      echo -n -e "\n\e[00;31mkilling processes which didn't stop after $SHUTDOWN_WAIT seconds\e[00m"
+      echo -n -e "\nkilling processes which didn't stop after $SHUTDOWN_WAIT seconds"
       kill -9 $pid
     fi
   else
-    echo -e "\e[00;31mTomcat is not running\e[00m"
+    echo "Tomcat is not running"
   fi
  
   return 0
 }
- 
-user_exists(){
-        if id -u $1 >/dev/null 2>&1; then
-        echo "1"
-        else
-                echo "0"
-        fi
-}
- 
+
 case $1 in
- 
-        start)
-          start
-        ;;
-       
-        stop)  
-          stop
-        ;;
-       
-        restart)
-          stop
-          start
-        ;;
-       
-        status)
-                status
-               
-        ;;
-       
-        *)
-                echo -e $TOMCAT_USAGE
-        ;;
+start)
+  start
+;; 
+stop)   
+  stop
+;; 
+restart)
+  stop
+  start
+;;
+status)
+  pid=$(tomcat_pid)
+  if [ -n "$pid" ]
+  then
+    echo "Tomcat is running with pid: $pid"
+  else
+    echo "Tomcat is not running"
+  fi
+;; 
 esac    
-exit 0 
+exit 0

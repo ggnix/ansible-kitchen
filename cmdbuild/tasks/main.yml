@@ -27,6 +27,9 @@
 - name: Extract tomcat
   command: '/bin/tar xzvf /tmp/apache-tomcat-{{tomcat_version}}.tar.gz -C /opt/tomcat --strip-components=1'
 
+- name: JDBC
+  get_url: url={{ JDBC_URL }} dest=/opt/tomcat/lib/
+
 - name: add group "tomcat"
   group: name=tomcat
 
@@ -49,4 +52,92 @@
   service: name=tomcat state=started enabled=yes
 
 - name: wait for tomcat to start
-  wait_for: port={{http_port}}
+  wait_for: port={{ http_port }}
+
+# Postresql installation
+
+- name: Postgres
+  file: path=/usr/pgsql-9.4/bin/postgres
+  register: result_postgres
+  ignore_errors: True
+
+- block:
+  - name: Postgres - Centos/RHEL 6
+    yum: name={{ postgre_repo_v6 }} state=present
+    when: "ansible_os_family == 'RedHat' and ansible_distribution_major_version == '6'"
+    ignore_errors: True
+  
+  - name: Postgres installation
+    yum: name={{ item }} state=present
+    with_items:
+      - postgresql94
+      - postgresql94-server
+      - postgresql94-devel
+#      - python-psycopg2
+#      - postgresql-contrib
+#      - libselinux-python
+
+  - name: Postgres initdb
+    shell: "/usr/pgsql-9.4/bin/initdb --encoding=UTF-8 --no-locale -D /var/lib/pgsql/9.4/data/"
+    become: yes
+    become_user: postgres
+    ignore_errors: True
+
+  - name: Postgres postgresql.conf
+    replace: dest=/var/lib/pgsql/9.4/data/postgresql.conf regexp="{{ item.regexp }}" replace="{{ item.replace }}"
+    with_items:
+      - regexp: "^#listen_addresses = 'localhost'"
+        replace: "listen_addresses = '*'"
+
+  - name: Postgres pg_hba.conf
+    lineinfile: >
+      dest=/var/lib/pgsql/9.4/data/pg_hba.conf
+      line='host    all             all             0.0.0.0/0               trust'
+    when: result_postgres|failed
+  
+  - name: Postgres
+    service: name=postgresql-9.4 state=started enabled=yes
+
+# CMDBuild installation
+
+- name: unzip
+  yum: name=unzip state=present
+
+- name: CMDBuild/Shark
+  unarchive: src={{ item }} dest=/tmp copy=no validate_certs=no
+  with_items:
+    - "{{ CMDBUILD_URL }}"
+    - "{{ SHARK_URL }}"
+
+- name: CMDBuild/Shark copy
+  copy: src={{ item.src }} dest={{ item.dest }} force=no remote_src=True
+  with_items:
+    - src: /tmp/cmdbuild-{{ CMDBUILD_VER }}/cmdbuild-{{ CMDBUILD_VER }}.war
+      dest: /opt/tomcat/webapps/cmdbuild.war
+    - src: /tmp/shark-cmdbuild-{{ CMDBUILD_VER }}/cmdbuild-shark-server-{{ CMDBUILD_VER }}.war
+      dest: /opt/tomcat/webapps/shark.war
+
+- wait_for: path=/opt/tomcat/webapps/shark/META-INF/context.xml
+- name: Shark META-INF/context.xml
+  replace: >
+    dest=/opt/tomcat/webapps/shark/META-INF/context.xml
+    regexp='\${cmdbuild}'
+    replace='cmdbuild'   
+- wait_for: path=/opt/tomcat/webapps/cmdbuild/WEB-INF/conf/auth.conf
+
+- name: CMDBuild
+  lineinfile: >
+    dest=/opt/tomcat/webapps/cmdbuild/WEB-INF/conf/auth.conf
+    state=present
+    insertafter=EOF
+    line=serviceusers.privileged=workflow
+
+- name: Tomcat stop
+  service: name=tomcat state=stopped 
+
+- name: Start Tomcat
+  service: name=tomcat state=started
+
+- name: wait for tomcat to start
+  wait_for: port={{ http_port }}
+

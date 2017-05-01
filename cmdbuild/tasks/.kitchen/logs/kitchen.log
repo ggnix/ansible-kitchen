@@ -1,0 +1,30 @@
+I, [2017-05-01T08:39:51.672156 #7979]  INFO -- Kitchen: -----> Starting Kitchen (v1.16.0)
+E, [2017-05-01T08:39:51.672852 #7979] ERROR -- Kitchen: ------Exception-------
+E, [2017-05-01T08:39:51.673454 #7979] ERROR -- Kitchen: Class: Kitchen::UserError
+E, [2017-05-01T08:39:51.673481 #7979] ERROR -- Kitchen: Message: Kitchen YAML file /home/ec2-user/ansible_kitchen/cmdbuild/tasks/.kitchen.yml does not exist.
+E, [2017-05-01T08:39:51.673496 #7979] ERROR -- Kitchen: ----------------------
+E, [2017-05-01T08:39:51.673509 #7979] ERROR -- Kitchen: ------Backtrace-------
+E, [2017-05-01T08:39:51.673541 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/test-kitchen-1.16.0/lib/kitchen/loader/yaml.rb:71:in `read'
+E, [2017-05-01T08:39:51.673559 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/test-kitchen-1.16.0/lib/kitchen/config.rb:152:in `data'
+E, [2017-05-01T08:39:51.673678 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/test-kitchen-1.16.0/lib/kitchen/config.rb:131:in `suites'
+E, [2017-05-01T08:39:51.673707 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/test-kitchen-1.16.0/lib/kitchen/config.rb:182:in `filter_instances'
+E, [2017-05-01T08:39:51.673722 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/test-kitchen-1.16.0/lib/kitchen/config.rb:141:in `build_instances'
+E, [2017-05-01T08:39:51.673735 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/test-kitchen-1.16.0/lib/kitchen/config.rb:117:in `instances'
+E, [2017-05-01T08:39:51.673747 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:112:in `filtered_instances'
+E, [2017-05-01T08:39:51.673759 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:142:in `parse_subcommand'
+E, [2017-05-01T08:39:51.673771 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/test-kitchen-1.16.0/lib/kitchen/command/action.rb:35:in `block in call'
+E, [2017-05-01T08:39:51.673783 #7979] ERROR -- Kitchen: /usr/share/ruby/2.0/benchmark.rb:281:in `measure'
+E, [2017-05-01T08:39:51.673795 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/test-kitchen-1.16.0/lib/kitchen/command/action.rb:34:in `call'
+E, [2017-05-01T08:39:51.673807 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/test-kitchen-1.16.0/lib/kitchen/cli.rb:53:in `perform'
+E, [2017-05-01T08:39:51.673819 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/test-kitchen-1.16.0/lib/kitchen/cli.rb:187:in `block (2 levels) in <class:CLI>'
+E, [2017-05-01T08:39:51.673831 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/thor-0.19.1/lib/thor/command.rb:27:in `run'
+E, [2017-05-01T08:39:51.673843 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/thor-0.19.1/lib/thor/invocation.rb:126:in `invoke_command'
+E, [2017-05-01T08:39:51.673855 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/test-kitchen-1.16.0/lib/kitchen/cli.rb:334:in `invoke_task'
+E, [2017-05-01T08:39:51.673866 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/thor-0.19.1/lib/thor.rb:359:in `dispatch'
+E, [2017-05-01T08:39:51.673878 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/thor-0.19.1/lib/thor/base.rb:440:in `start'
+E, [2017-05-01T08:39:51.673890 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/test-kitchen-1.16.0/bin/kitchen:13:in `block in <top (required)>'
+E, [2017-05-01T08:39:51.673901 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/test-kitchen-1.16.0/lib/kitchen/errors.rb:171:in `with_friendly_errors'
+E, [2017-05-01T08:39:51.674034 #7979] ERROR -- Kitchen: /home/ec2-user/.gem/ruby/2.0/gems/test-kitchen-1.16.0/bin/kitchen:13:in `<top (required)>'
+E, [2017-05-01T08:39:51.674053 #7979] ERROR -- Kitchen: /home/ec2-user/bin/kitchen:23:in `load'
+E, [2017-05-01T08:39:51.674065 #7979] ERROR -- Kitchen: /home/ec2-user/bin/kitchen:23:in `<main>'
+E, [2017-05-01T08:39:51.674077 #7979] ERROR -- Kitchen: ----End Backtrace-----
