@@ -7,7 +7,7 @@ driver:
   security_group_ids: ["sg-0cb73267"]
   region: eu-central-1
   availability_zone: b
-  instance_type: t2.small
+  instance_type: t2.micro
   associate_public_ip: true
   shared_credentials_profile: default
   provision_command:
