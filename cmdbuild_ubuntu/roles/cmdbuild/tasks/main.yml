@@ -1,0 +1,253 @@
+---
+# Java installation
+
+- name: Install add-apt-repostory
+  become: yes
+  apt: name=software-properties-common state=latest
+
+- name: Add Oracle Java Repository
+  become: yes
+  apt_repository: repo='ppa:webupd8team/java'
+
+- name: Accept Java 8 License
+  become: yes
+  debconf: name='oracle-java8-installer' question='shared/accepted-oracle-license-v1-1' value='true' vtype='select'
+
+- name: Install Oracle Java 8
+  become: yes
+  apt: name={{item}} state=latest
+  with_items:
+    - oracle-java8-installer
+    - ca-certificates
+    - oracle-java8-set-default
+
+# Tomcat installation and configuration
+
+- name: Download tomcat
+  get_url: url=http://archive.apache.org/dist/tomcat/tomcat-8/v{{tomcat_version}}/bin/apache-tomcat-{{tomcat_version}}.tar.gz dest=/tmp/apache-tomcat-{{tomcat_version}}.tar.gz
+
+- name: opt directory
+  file: state=directory path=/opt/tomcat
+
+- name: Extract tomcat
+  command: '/bin/tar xzvf /tmp/apache-tomcat-{{tomcat_version}}.tar.gz -C /opt/tomcat --strip-components=1'
+
+- name: JDBC
+  get_url: url={{ JDBC_URL }} dest=/opt/tomcat/lib/
+
+- name: add group "tomcat"
+  group: name=tomcat
+
+- name: add user "tomcat"
+  user: name=tomcat group=tomcat home=/opt/tomcat createhome=no
+
+- name: Change ownership of Tomcat installation
+  file: path=/opt/tomcat/ owner=tomcat group=tomcat state=directory recurse=yes
+
+- name: Remove docs apps
+  file: path=/opt/tomcat/webapps/docs state=absent
+
+- name: Remove examples apps
+  file: path=/opt/tomcat/webapps/examples state=absent
+
+- name: system directory
+  file: state=directory path=/usr/lib/systemd/system
+
+- name: Add tomcat systemd unit file
+  copy: src=tomcat.service dest=/usr/lib/systemd/system/tomcat.service owner=root group=root
+
+- name: systemd daemon-reload
+  shell: systemctl daemon-reload
+
+- name: Start tomcat
+  service: name=tomcat state=restarted enabled=yes
+
+- name: wait for tomcat to start
+  wait_for: port={{ http_port }}
+
+# Postresql installation
+
+- name: Postgres
+  file: path=/usr/pgsql-9.4/bin/postgres
+  register: result_postgres
+  ignore_errors: True
+
+- name: Add pgdg apt key
+  apt_key: id=ACCC4CF8 url=http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc
+
+- name: Add pgdg apt repository
+  apt_repository:  repo="deb http://apt.postgresql.org/pub/repos/apt/ {{ansible_distribution_release}}-pgdg main"
+
+- name: Install postgresql
+  apt: pkg={{item}} state=present update_cache=yes cache_valid_time=3600
+  with_items:
+    - sudo
+    - libpq-dev
+    - postgresql-client
+    - postgresql-contrib-9.4
+    - postgresql-9.4
+    - python-psycopg2
+      
+- name: Postgres postgresql.conf
+  replace: dest=/etc/postgresql/9.4/main/postgresql.conf regexp="{{ item.regexp }}" replace="{{ item.replace }}"
+  with_items:
+    - regexp: "^#listen_addresses = 'localhost'"
+      replace: "listen_addresses = '*'"
+
+- name: Postgres pg_hba.conf
+  lineinfile: >
+    dest=/etc/postgresql/9.4/main/pg_hba.conf
+    line='host    all             all             0.0.0.0/0               trust'
+  when: result_postgres|failed
+  
+- name: Postgres
+  service: name=postgresql state=started enabled=yes
+
+- name: Change password for postgres
+  command: sudo -u postgres psql template1 -c "ALTER USER postgres WITH PASSWORD 'postgres';"
+
+
+# CMDBuild installation
+
+- name: unzip
+  apt: name=unzip state=present
+
+- name: CMDBuild/Shark
+  unarchive: src={{ item }} dest=/tmp copy=no validate_certs=no
+  with_items:
+    - "{{ CMDBUILD_URL }}"
+    - "{{ SHARK_URL }}"
+
+- name: CMDBuild/Shark copy
+  copy: src={{ item.src }} dest={{ item.dest }} force=no remote_src=True
+  with_items:
+    - src: /tmp/cmdbuild-{{ CMDBUILD_VER }}/cmdbuild-{{ CMDBUILD_VER }}.war
+      dest: /opt/tomcat/webapps/cmdbuild.war
+    - src: /tmp/shark-cmdbuild-{{ CMDBUILD_VER }}/cmdbuild-shark-server-{{ CMDBUILD_VER }}.war
+      dest: /opt/tomcat/webapps/shark.war
+
+- wait_for: path=/opt/tomcat/webapps/shark/META-INF/context.xml
+- name: Shark META-INF/context.xml
+  replace: >
+    dest=/opt/tomcat/webapps/shark/META-INF/context.xml
+    regexp='\${cmdbuild}'
+    replace='cmdbuild'   
+- wait_for: path=/opt/tomcat/webapps/cmdbuild/WEB-INF/conf/auth.conf
+
+- name: CMDBuild
+  lineinfile: >
+    dest=/opt/tomcat/webapps/cmdbuild/WEB-INF/conf/auth.conf
+    state=present
+    insertafter=EOF
+    line=serviceusers.privileged=workflow
+
+- name: Tomcat stop
+  service: name=tomcat state=stopped 
+
+- name: Start Tomcat
+  service: name=tomcat state=started
+
+- name: wait for tomcat to start
+  wait_for: port={{ http_port }}
+
+# Ready2Use patch
+
+- name: Extract patch
+  unarchive: src={{ item }} dest=/tmp copy=no validate_certs=no
+  with_items:
+    - "{{ Ready2Use_URL }}"
+
+- name: Move libs
+  copy: src=/tmp/cmdbuild-ready2use-1.1/lib/{{ item }} dest=/opt/tomcat/lib remote_src=yes 
+  with_items: 
+    - "pdfbox-2.0.2.jar"
+    - "javase-2.1.jar"
+    - "core-2.1.jar"
+
+- name: Tomcat stop
+  service: name=tomcat state=stopped
+
+- name: Create database cmdbuild
+  postgresql_db: name=cmdbuild login_host=localhost login_password=postgres encoding='UTF-8'
+
+- name: install pip
+  apt: pkg=python-pip state=present
+
+- name: Pexpect library
+  pip: name=https://pypi.python.org/packages/source/p/pexpect/pexpect-3.3.tar.gz
+
+- name: permissions 
+  file: dest=/opt/tomcat/webapps mode="o+r" recurse=yes 
+
+- name: permissions sql
+  file: dest=/opt/tomcat/webapps/cmdbuild/WEB-INF/sql/shark_schema/01_shark_user.sql mode="o+x" 
+
+- name: Shark schema 
+  command: psql -h localhost -U postgres -p 5432 -a -f /opt/tomcat/webapps/cmdbuild/WEB-INF/sql/shark_schema/01_shark_user.sql
+  environment:
+    PGPASSWORD: postgres
+
+- expect:
+    command: sudo /tmp/cmdbuild-ready2use-1.1/bin/setup.sh
+    responses:
+      'host:': 'localhost'
+      'port:': '5432'
+      'username:': 'postgres'
+      'password required\? \(true/false\)': 'false'
+      'database:': 'cmdbuild'
+      'database with data\? \(true/false\)': 'true'
+      'root:': '/opt/tomcat/webapps/cmdbuild'
+      'above is correct\? \(true/false\)': 'true'
+      'Password:': 'postgres' 
+    timeout: 120
+
+- name: Fix permissions
+  file: dest=/opt/tomcat/webapps/cmdbuild owner=tomcat group=tomcat recurse=yes 
+
+- name: Start Tomcat
+  service: name=tomcat state=started
+
+- name: wait for tomcat to start
+  wait_for: port={{ http_port }}
+
+# Alfresco Installation
+
+- name: Alfresco
+  file: path=/opt/alfresco-community/
+  register: result_alfresco
+  ignore_errors: True
+
+- block:
+  #- name: psycopg2
+   # yum: name=python-psycopg2 state=present
+    
+  - name: Alfresco DB remove
+    postgresql_db: name=alfresco login_host=localhost login_password=postgres state=absent
+    ignore_errors: True
+    
+  - name: ALfresco DB
+    postgresql_db: name=alfresco login_host=localhost login_password=postgres encoding='UTF-8' state=present
+
+  - name: Alfresco Installation
+    get_url: url={{ALFRESCO_URL}} dest=/tmp mode=755 force=no 
+    ignore_errors: True
+    
+  - name: Alfresco start
+    shell: "/tmp/alfresco-community-installer-201602-linux-x64.bin \
+--unattendedmodeui none --mode unattended \
+--enable-components libreofficecomponent,alfrescosolr,alfrescosolr4,aosmodule,alfrescowcmqs,alfrescogoogledocs \
+--disable-components javaalfresco,postgres \
+--installer-language ja \
+--jdbc_username postgres --jdbc_password postgres \
+--tomcat_server_port 10080 --tomcat_server_shutdown_port 10005 \
+--tomcat_server_ajp_port 10009 --alfresco_ftp_port 1121 \
+--alfresco_admin_password admin \
+--alfrescocustomstack_services_startup demand"
+  
+  - name: JDBC driver
+    copy: src=/opt/tomcat/lib/postgresql-9.4.1208.jar dest=/opt/alfresco-community/tomcat/lib/ remote_src=True
+
+  when: result_alfresco|failed
+  
+- name: Alfresco start
+  service: name=alfresco state=started enabled=yes 

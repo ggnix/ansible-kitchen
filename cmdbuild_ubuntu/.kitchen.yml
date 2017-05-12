@@ -1,0 +1,53 @@
+---
+driver:
+  name: ec2
+  #aws_access_key_id: gleb-cmdbuild
+  #aws_access_key_id: "<%= ENV['AWS_ACCESS_KEY_ID']%>"
+  #aws_secret_access_key: "<%= ENV['AWS_SECRET_ACCESS_KEY']%>"
+  security_group_ids: ["sg-0cb73267"]
+  region: eu-central-1
+  availability_zone: b
+  instance_type: t2.small
+  associate_public_ip: true
+  shared_credentials_profile: default
+  provision_command:
+    - apt-get update -y
+    - apt-get install -y wget
+
+provisioner:
+  name: ansible_playbook
+  #require_pip: true
+  #custom_pre_play_command: sudo pip install -U pip
+  hosts: localhost
+  #roles_path: /home/ec2-user/cmdbuild/roles
+  require_chef_for_busser: false
+  require_ruby_for_busser: true
+  #require_ansible_repo: false
+  #require_ansible_omnibus: true
+  
+
+platforms:
+  - name: ubuntu
+    driver_config: 
+      image_id: ami-060cde69
+      aws_ssh_key_id: gleb-cmdbuild
+    transport:
+      name: sftp
+      ssh_key: /home/gleb/.ssh/gleb-cmdbuild.pem
+      username: ubuntu
+      max_ssh_sessions: 6
+    
+verifier:
+name: inspec
+
+suites:
+   - name: cmdbuild
+     provisioner:
+       playbook: cmdbuild.yml
+     verifier:
+       patterns: 
+         - test/integration/cmdbuild/test_spec.rb
+     driver:
+       forward:
+         - 8080:8080  
+         - 10080:10080   
