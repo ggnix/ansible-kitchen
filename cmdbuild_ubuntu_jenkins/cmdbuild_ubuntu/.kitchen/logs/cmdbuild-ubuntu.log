@@ -1,0 +1,626 @@
+I, [2017-05-12T20:37:08.373931 #5574]  INFO -- cmdbuild-ubuntu: -----> Creating <cmdbuild-ubuntu>...
+I, [2017-05-12T20:37:08.462443 #5574]  INFO -- cmdbuild-ubuntu: Detected platform: ubuntu version 16.04 on x86_64. Instance Type: t2.micro. Default username: ubuntu (default).
+I, [2017-05-12T20:37:08.462749 #5574]  INFO -- cmdbuild-ubuntu: If you are not using an account that qualifies under the AWS
+free-tier, you may be charged to run these suites. The charge
+should be minimal, but neither Test Kitchen nor its maintainers
+are responsible for your incurred costs.
+
+I, [2017-05-12T20:37:09.659366 #5574]  INFO -- cmdbuild-ubuntu: Instance <i-014fa6b10ced0f31c> requested.
+I, [2017-05-12T20:37:09.659587 #5574]  INFO -- cmdbuild-ubuntu: Polling AWS for existence, attempt 0...
+I, [2017-05-12T20:37:09.796462 #5574]  INFO -- cmdbuild-ubuntu: Attempting to tag the instance, 0 retries
+I, [2017-05-12T20:37:09.902249 #5574]  INFO -- cmdbuild-ubuntu: EC2 instance <i-014fa6b10ced0f31c> created.
+I, [2017-05-12T20:37:09.902501 #5574]  INFO -- cmdbuild-ubuntu: Waited 0/300s for instance <i-014fa6b10ced0f31c> volumes to be ready.
+I, [2017-05-12T20:37:15.508953 #5574]  INFO -- cmdbuild-ubuntu: Waited 5/300s for instance <i-014fa6b10ced0f31c> volumes to be ready.
+I, [2017-05-12T20:37:16.261416 #5574]  INFO -- cmdbuild-ubuntu: Waited 0/300s for instance <i-014fa6b10ced0f31c> to become ready.
+I, [2017-05-12T20:37:21.378693 #5574]  INFO -- cmdbuild-ubuntu: Waited 5/300s for instance <i-014fa6b10ced0f31c> to become ready.
+I, [2017-05-12T20:37:26.512385 #5574]  INFO -- cmdbuild-ubuntu: Waited 10/300s for instance <i-014fa6b10ced0f31c> to become ready.
+I, [2017-05-12T20:37:31.639411 #5574]  INFO -- cmdbuild-ubuntu: Waited 15/300s for instance <i-014fa6b10ced0f31c> to become ready.
+I, [2017-05-12T20:37:37.057100 #5574]  INFO -- cmdbuild-ubuntu: Waited 20/300s for instance <i-014fa6b10ced0f31c> to become ready.
+I, [2017-05-12T20:37:42.330788 #5574]  INFO -- cmdbuild-ubuntu: Waited 25/300s for instance <i-014fa6b10ced0f31c> to become ready.
+I, [2017-05-12T20:37:42.445348 #5574]  INFO -- cmdbuild-ubuntu: EC2 instance <i-014fa6b10ced0f31c> ready.
+I, [2017-05-12T20:37:42.454633 #5574]  INFO -- cmdbuild-ubuntu: Waiting for SSH service on ec2-34-201-112-113.compute-1.amazonaws.com:22, retrying in 3 seconds
+I, [2017-05-12T20:37:45.902078 #5574]  INFO -- cmdbuild-ubuntu: [SSH] Established
+I, [2017-05-12T20:37:45.986003 #5574]  INFO -- cmdbuild-ubuntu: Finished creating <cmdbuild-ubuntu> (0m37.61s).
+I, [2017-05-12T20:37:45.986212 #5574]  INFO -- cmdbuild-ubuntu: -----> Converging <cmdbuild-ubuntu>...
+I, [2017-05-12T20:37:45.986819 #5574]  INFO -- cmdbuild-ubuntu: Preparing files for transfer
+I, [2017-05-12T20:37:45.986957 #5574]  INFO -- cmdbuild-ubuntu: Preparing playbook
+I, [2017-05-12T20:37:45.987718 #5574]  INFO -- cmdbuild-ubuntu: Preparing inventory
+I, [2017-05-12T20:37:45.987833 #5574]  INFO -- cmdbuild-ubuntu: Preparing modules
+I, [2017-05-12T20:37:45.988012 #5574]  INFO -- cmdbuild-ubuntu: nothing to do for modules
+I, [2017-05-12T20:37:45.988107 #5574]  INFO -- cmdbuild-ubuntu: Preparing roles
+I, [2017-05-12T20:37:45.995937 #5574]  INFO -- cmdbuild-ubuntu: Preparing ansible.cfg file
+I, [2017-05-12T20:37:45.996086 #5574]  INFO -- cmdbuild-ubuntu: Empty ansible.cfg generated
+I, [2017-05-12T20:37:45.996240 #5574]  INFO -- cmdbuild-ubuntu: Preparing group_vars
+I, [2017-05-12T20:37:45.996442 #5574]  INFO -- cmdbuild-ubuntu: nothing to do for group_vars
+I, [2017-05-12T20:37:45.996549 #5574]  INFO -- cmdbuild-ubuntu: Preparing additional_copy_path
+I, [2017-05-12T20:37:45.996705 #5574]  INFO -- cmdbuild-ubuntu: Preparing host_vars
+I, [2017-05-12T20:37:45.996868 #5574]  INFO -- cmdbuild-ubuntu: nothing to do for host_vars
+I, [2017-05-12T20:37:45.997004 #5574]  INFO -- cmdbuild-ubuntu: Preparing hosts file
+I, [2017-05-12T20:37:45.997158 #5574]  INFO -- cmdbuild-ubuntu: Preparing spec
+I, [2017-05-12T20:37:45.997294 #5574]  INFO -- cmdbuild-ubuntu: nothing to do for spec
+I, [2017-05-12T20:37:45.997381 #5574]  INFO -- cmdbuild-ubuntu: Preparing library plugins
+I, [2017-05-12T20:37:45.997569 #5574]  INFO -- cmdbuild-ubuntu: nothing to do for library plugins
+I, [2017-05-12T20:37:45.997676 #5574]  INFO -- cmdbuild-ubuntu: Preparing callback plugins
+I, [2017-05-12T20:37:45.997972 #5574]  INFO -- cmdbuild-ubuntu: nothing to do for callback plugins
+I, [2017-05-12T20:37:45.998080 #5574]  INFO -- cmdbuild-ubuntu: Preparing filter_plugins
+I, [2017-05-12T20:37:45.998261 #5574]  INFO -- cmdbuild-ubuntu: nothing to do for filter_plugins
+I, [2017-05-12T20:37:45.998364 #5574]  INFO -- cmdbuild-ubuntu: Preparing lookup_plugins
+I, [2017-05-12T20:37:45.998556 #5574]  INFO -- cmdbuild-ubuntu: nothing to do for lookup_plugins
+I, [2017-05-12T20:37:45.998730 #5574]  INFO -- cmdbuild-ubuntu: Preparing additional_ssh_private_keys
+I, [2017-05-12T20:37:45.998891 #5574]  INFO -- cmdbuild-ubuntu: nothing to do for additional_ssh_private_keys
+I, [2017-05-12T20:37:45.999012 #5574]  INFO -- cmdbuild-ubuntu: Finished Preparing files for transfer
+I, [2017-05-12T20:37:45.999320 #5574]  INFO -- cmdbuild-ubuntu: Installing ansible, will try to determine platform os
+I, [2017-05-12T20:37:46.166169 #5574]  INFO -- cmdbuild-ubuntu: 0% [Working]            Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial InRelease
+I, [2017-05-12T20:37:46.166824 #5574]  INFO -- cmdbuild-ubuntu: 0% [Waiting for headers] [Connecting to security.ubuntu.com (91.189.88.149)]                                                                            Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease [102 kB]
+I, [2017-05-12T20:37:46.168859 #5574]  INFO -- cmdbuild-ubuntu:                                                                             Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-backports InRelease [102 kB]
+I, [2017-05-12T20:37:46.288271 #5574]  INFO -- cmdbuild-ubuntu:                                                                             0% [Connecting to security.ubuntu.com (91.189.88.149)]0% [1 InRelease gpgv 247 kB] [Connecting to security.ubuntu.com (91.189.88.149)                                                                               Get:4 http://security.ubuntu.com/ubuntu xenial-security InRelease [102 kB]
+I, [2017-05-12T20:37:46.564363 #5574]  INFO -- cmdbuild-ubuntu:                                                                                0% [1 InRelease gpgv 247 kB] [4 InRelease 14.2 kB/102 kB 14%]                                                             0% [4 InRelease 102 kB/102 kB 100%]                                   0% [Working]            Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main Sources [868 kB]
+I, [2017-05-12T20:37:46.625255 #5574]  INFO -- cmdbuild-ubuntu: 0% [2 InRelease gpgv 102 kB] [5 Sources 243 kB/868 kB 28%]                                                          0% [2 InRelease gpgv 102 kB]                            Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/restricted Sources [4,808 B]
+I, [2017-05-12T20:37:46.626623 #5574]  INFO -- cmdbuild-ubuntu: 0% [2 InRelease gpgv 102 kB] [Waiting for headers]                                                  Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/universe Sources [7,728 kB]
+I, [2017-05-12T20:37:47.064925 #5574]  INFO -- cmdbuild-ubuntu: 0% [2 InRelease gpgv 102 kB] [7 Sources 11.6 kB/7,728 kB 0%]0% [5 Sources store 0 B] [2 InRelease gpgv 102 kB] [7 Sources 217 kB/7,728 kB 3                                                                               0% [5 Sources store 0 B] [7 Sources 4,771 kB/7,728 kB 62%]0% [5 Sources store 0 B] [3 InRelease gpgv 102 kB] [7 Sources 4,944 kB/7,728 kB                                                                               0% [5 Sources store 0 B] [3 InRelease gpgv 102 kB] [Waiting for headers]                                                                        Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/multiverse Sources [179 kB]
+I, [2017-05-12T20:37:47.066199 #5574]  INFO -- cmdbuild-ubuntu: 0% [5 Sources store 0 B] [3 InRelease gpgv 102 kB] [Waiting for headers]                                                                        Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main Sources [247 kB]
+I, [2017-05-12T20:37:47.083743 #5574]  INFO -- cmdbuild-ubuntu: 0% [5 Sources store 0 B] [3 InRelease gpgv 102 kB] [9 Sources 0 B/247 kB 0%]                                                                            0% [5 Sources store 0 B] [3 InRelease gpgv 102 kB] [Waiting for headers]                                                                        Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/restricted Sources [2,996 B]
+I, [2017-05-12T20:37:47.085937 #5574]  INFO -- cmdbuild-ubuntu: 0% [5 Sources store 0 B] [3 InRelease gpgv 102 kB] [Waiting for headers]                                                                        Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/universe Sources [152 kB]
+I, [2017-05-12T20:37:47.089594 #5574]  INFO -- cmdbuild-ubuntu: 0% [5 Sources store 0 B] [3 InRelease gpgv 102 kB] [11 Sources 62.0 kB/152 kB 4                                                                               0% [5 Sources store 0 B] [3 InRelease gpgv 102 kB]                                                  Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/multiverse Sources [5,288 B]
+I, [2017-05-12T20:37:47.091329 #5574]  INFO -- cmdbuild-ubuntu: 0% [5 Sources store 0 B] [3 InRelease gpgv 102 kB] [12 Sources 0 B/5,288 B 0%]                                                                              0% [5 Sources store 0 B] [3 InRelease gpgv 102 kB]                                                  Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [530 kB]
+I, [2017-05-12T20:37:47.128597 #5574]  INFO -- cmdbuild-ubuntu: 0% [5 Sources store 0 B] [3 InRelease gpgv 102 kB] [13 Packages 0 B/530 kB 0%]                                                                              0% [3 InRelease gpgv 102 kB] [13 Packages 304 kB/530 kB 57%]0% [6 Sources store 0 B] [3 InRelease gpgv 102 kB] [13 Packages 422 kB/530 kB 8                                                                               0% [3 InRelease gpgv 102 kB] [13 Packages 422 kB/530 kB 80%]                                                            0% [3 InRelease gpgv 102 kB]0% [7 Sources store 0 B] [3 InRelease gpgv 102 kB]                                                  Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main Translation-en [215 kB]
+I, [2017-05-12T20:37:47.137222 #5574]  INFO -- cmdbuild-ubuntu: 0% [7 Sources store 0 B] [3 InRelease gpgv 102 kB] [14 Translation-en 32.4 kB/2                                                                               0% [7 Sources store 0 B] [3 InRelease gpgv 102 kB]                                                  Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [461 kB]
+I, [2017-05-12T20:37:47.164271 #5574]  INFO -- cmdbuild-ubuntu: 0% [7 Sources store 0 B] [3 InRelease gpgv 102 kB] [15 Packages 0 B/461 kB 0%]                                                                              0% [7 Sources store 0 B] [3 InRelease gpgv 102 kB]                                                  Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/universe Translation-en [180 kB]
+I, [2017-05-12T20:37:47.214803 #5574]  INFO -- cmdbuild-ubuntu: 0% [7 Sources store 0 B] [3 InRelease gpgv 102 kB] [16 Translation-en 0 B/180 k                                                                               0% [7 Sources store 0 B] [3 InRelease gpgv 102 kB]                                                  0% [7 Sources store 0 B] [Waiting for headers]0% [7 Sources store 0 B] [4 InRelease gpgv 102 kB] [Waiting for headers]                                                                        Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [8,932 B]
+I, [2017-05-12T20:37:47.216320 #5574]  INFO -- cmdbuild-ubuntu:                                                                         0% [7 Sources store 0 B] [4 InRelease gpgv 102 kB]                                                  Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-backports/main Sources [3,304 B]
+I, [2017-05-12T20:37:47.217610 #5574]  INFO -- cmdbuild-ubuntu: 0% [7 Sources store 0 B] [4 InRelease gpgv 102 kB] [Waiting for headers]                                                                        Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-backports/universe Sources [1,868 B]
+I, [2017-05-12T20:37:47.218758 #5574]  INFO -- cmdbuild-ubuntu: 0% [7 Sources store 0 B] [4 InRelease gpgv 102 kB] [Waiting for headers]                                                                        Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [4,684 B]
+I, [2017-05-12T20:37:47.530882 #5574]  INFO -- cmdbuild-ubuntu:                                                                         0% [7 Sources store 0 B] [4 InRelease gpgv 102 kB]                                                  90% [7 Sources store 0 B]                         Get:21 http://security.ubuntu.com/ubuntu xenial-security/main Sources [69.8 kB]
+I, [2017-05-12T20:37:47.682293 #5574]  INFO -- cmdbuild-ubuntu: 90% [7 Sources store 0 B] [21 Sources 28.8 kB/69.8 kB 41%]                                                          91% [7 Sources store 0 B]                         Get:22 http://security.ubuntu.com/ubuntu xenial-security/restricted Sources [2,600 B]
+I, [2017-05-12T20:37:47.758870 #5574]  INFO -- cmdbuild-ubuntu: 91% [7 Sources store 0 B] [Waiting for headers]                                               Get:23 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [26.8 kB]
+I, [2017-05-12T20:37:47.834458 #5574]  INFO -- cmdbuild-ubuntu: 91% [7 Sources store 0 B] [Waiting for headers]                                               Get:24 http://security.ubuntu.com/ubuntu xenial-security/multiverse Sources [1,144 B]
+I, [2017-05-12T20:37:47.911639 #5574]  INFO -- cmdbuild-ubuntu: 91% [7 Sources store 0 B] [Waiting for headers]                                               Get:25 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [258 kB]
+I, [2017-05-12T20:37:48.067549 #5574]  INFO -- cmdbuild-ubuntu: 91% [7 Sources store 0 B] [25 Packages 99.7 kB/258 kB 39%]                                                          93% [7 Sources store 0 B]                         Get:26 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en [109 kB]
+I, [2017-05-12T20:37:48.144876 #5574]  INFO -- cmdbuild-ubuntu: 93% [7 Sources store 0 B] [26 Translation-en 88.1 kB/109 kB 81%]                                                                93% [7 Sources store 0 B]                         Get:27 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [110 kB]
+I, [2017-05-12T20:37:48.222374 #5574]  INFO -- cmdbuild-ubuntu: 94% [7 Sources store 0 B] [27 Packages 57.7 kB/110 kB 52%]                                                          94% [7 Sources store 0 B]                         Get:28 http://security.ubuntu.com/ubuntu xenial-security/universe Translation-en [56.6 kB]
+I, [2017-05-12T20:37:48.299803 #5574]  INFO -- cmdbuild-ubuntu: 94% [7 Sources store 0 B] [28 Translation-en 40.3 kB/56.6 kB 71%]                                                                 95% [7 Sources store 0 B]                         Get:29 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [2,752 B]
+I, [2017-05-12T20:37:49.909347 #5574]  INFO -- cmdbuild-ubuntu: 95% [7 Sources store 0 B]95% [7 Sources store 0 B]95% [7 Sources store 0 B]                         95% [Working]95% [8 Sources store 0 B]                         95% [Working]95% [9 Sources store 0 B]                         95% [Working]95% [10 Sources store 0 B]                          95% [Working]95% [11 Sources store 0 B]                          96% [Working]96% [12 Sources store 0 B]                          96% [Working]96% [13 Packages store 0 B]                           96% [Working]96% [14 Translation-en store 0 B]                                 96% [Working]96% [15 Packages store 0 B]                           97% [Working]97% [16 Translation-en store 0 B]                                 97% [Working]97% [17 Packages store 0 B]                           97% [Working]97% [18 Sources store 0 B]                          97% [Working]97% [19 Sources store 0 B]                          98% [Working]98% [20 Packages store 0 B]                           98% [Working]98% [21 Sources store 0 B]                          98% [Working]98% [22 Sources store 0 B]                          98% [Working]98% [23 Sources store 0 B]                          99% [Working]99% [24 Sources store 0 B]                          99% [Working]99% [25 Packages store 0 B]                           99% [Working]99% [26 Translation-en store 0 B]                                 99% [Working]99% [27 Packages store 0 B]                           100% [Working]100% [28 Translation-en store 0 B]                                  100% [Working]100% [29 Packages store 0 B]                            100% [Working]              Fetched 11.5 MB in 3s (3,045 kB/s)
+I, [2017-05-12T20:37:52.873549 #5574]  INFO -- cmdbuild-ubuntu: Reading package lists... 0%Reading package lists... 0%Reading package lists... 1%Reading package lists... 7%Reading package lists... 7%Reading package lists... 11%Reading package lists... 11%Reading package lists... 11%Reading package lists... 11%Reading package lists... 11%Reading package lists... 11%Reading package lists... 57%Reading package lists... 57%Reading package lists... 82%Reading package lists... 82%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 87%Reading package lists... 87%Reading package lists... 88%Reading package lists... 89%Reading package lists... 89%Reading package lists... 89%Reading package lists... 89%Reading package lists... 89%Reading package lists... 89%Reading package lists... 93%Reading package lists... 93%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 96%Reading package lists... 96%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+I, [2017-05-12T20:37:52.933154 #5574]  INFO -- cmdbuild-ubuntu: Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+I, [2017-05-12T20:37:53.080411 #5574]  INFO -- cmdbuild-ubuntu: Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+I, [2017-05-12T20:37:53.080992 #5574]  INFO -- cmdbuild-ubuntu: Reading state information... 0%Reading state information... 6%Reading state information... Done
+I, [2017-05-12T20:37:53.091180 #5574]  INFO -- cmdbuild-ubuntu: git is already the newest version (1:2.7.4-0ubuntu1).
+I, [2017-05-12T20:37:53.171002 #5574]  INFO -- cmdbuild-ubuntu: The following additional packages will be installed:
+I, [2017-05-12T20:37:53.171475 #5574]  INFO -- cmdbuild-ubuntu:   apt libapt-pkg5.0
+I, [2017-05-12T20:37:53.171721 #5574]  INFO -- cmdbuild-ubuntu: Suggested packages:
+I, [2017-05-12T20:37:53.172022 #5574]  INFO -- cmdbuild-ubuntu:   aptitude | synaptic | wajig dpkg-dev apt-doc python-apt
+I, [2017-05-12T20:37:53.172434 #5574]  INFO -- cmdbuild-ubuntu: The following packages will be upgraded:
+I, [2017-05-12T20:37:53.172858 #5574]  INFO -- cmdbuild-ubuntu:   apt apt-utils libapt-pkg5.0
+I, [2017-05-12T20:37:53.175371 #5574]  INFO -- cmdbuild-ubuntu: 3 upgraded, 0 newly installed, 0 to remove and 43 not upgraded.
+I, [2017-05-12T20:37:53.204179 #5574]  INFO -- cmdbuild-ubuntu: Need to get 1,946 kB of archives.
+I, [2017-05-12T20:37:53.204486 #5574]  INFO -- cmdbuild-ubuntu: After this operation, 6,144 B of additional disk space will be used.
+I, [2017-05-12T20:37:53.212112 #5574]  INFO -- cmdbuild-ubuntu: 0% [Working]            Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libapt-pkg5.0 amd64 1.2.20 [707 kB]
+I, [2017-05-12T20:37:53.232796 #5574]  INFO -- cmdbuild-ubuntu: 0% [1 libapt-pkg5.0 0 B/707 kB 0%]                                  36% [Working]             Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 apt amd64 1.2.20 [1,042 kB]
+I, [2017-05-12T20:37:53.252425 #5574]  INFO -- cmdbuild-ubuntu: 36% [2 apt 0 B/1,042 kB 0%]                           85% [Working]             Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 apt-utils amd64 1.2.20 [196 kB]
+I, [2017-05-12T20:37:53.255825 #5574]  INFO -- cmdbuild-ubuntu: 85% [3 apt-utils 0 B/196 kB 0%]                               100% [Working]              Fetched 1,946 kB in 0s (39.4 MB/s)
+I, [2017-05-12T20:37:53.600488 #5574]  INFO -- cmdbuild-ubuntu: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 51251 files and directories currently installed.)
+I, [2017-05-12T20:37:53.602534 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../libapt-pkg5.0_1.2.20_amd64.deb ...
+I, [2017-05-12T20:37:53.640227 #5574]  INFO -- cmdbuild-ubuntu: Unpacking libapt-pkg5.0:amd64 (1.2.20) over (1.2.19) ...
+I, [2017-05-12T20:37:53.852820 #5574]  INFO -- cmdbuild-ubuntu: Processing triggers for libc-bin (2.23-0ubuntu7) ...
+I, [2017-05-12T20:37:54.086817 #5574]  INFO -- cmdbuild-ubuntu: Setting up libapt-pkg5.0:amd64 (1.2.20) ...
+I, [2017-05-12T20:37:54.100570 #5574]  INFO -- cmdbuild-ubuntu: Processing triggers for libc-bin (2.23-0ubuntu7) ...
+I, [2017-05-12T20:37:54.175308 #5574]  INFO -- cmdbuild-ubuntu: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 51251 files and directories currently installed.)
+I, [2017-05-12T20:37:54.176708 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../archives/apt_1.2.20_amd64.deb ...
+I, [2017-05-12T20:37:54.219595 #5574]  INFO -- cmdbuild-ubuntu: Unpacking apt (1.2.20) over (1.2.19) ...
+I, [2017-05-12T20:37:54.584799 #5574]  INFO -- cmdbuild-ubuntu: Processing triggers for libc-bin (2.23-0ubuntu7) ...
+I, [2017-05-12T20:37:54.597675 #5574]  INFO -- cmdbuild-ubuntu: Processing triggers for man-db (2.7.5-1) ...
+I, [2017-05-12T20:37:55.206880 #5574]  INFO -- cmdbuild-ubuntu: Setting up apt (1.2.20) ...
+I, [2017-05-12T20:37:55.608699 #5574]  INFO -- cmdbuild-ubuntu: Processing triggers for libc-bin (2.23-0ubuntu7) ...
+I, [2017-05-12T20:37:55.671074 #5574]  INFO -- cmdbuild-ubuntu: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 51251 files and directories currently installed.)
+I, [2017-05-12T20:37:55.672847 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../apt-utils_1.2.20_amd64.deb ...
+I, [2017-05-12T20:37:55.683107 #5574]  INFO -- cmdbuild-ubuntu: Unpacking apt-utils (1.2.20) over (1.2.19) ...
+I, [2017-05-12T20:37:55.763466 #5574]  INFO -- cmdbuild-ubuntu: Processing triggers for man-db (2.7.5-1) ...
+I, [2017-05-12T20:37:55.982845 #5574]  INFO -- cmdbuild-ubuntu: Setting up apt-utils (1.2.20) ...
+I, [2017-05-12T20:37:56.824211 #5574]  INFO -- cmdbuild-ubuntu: Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+I, [2017-05-12T20:37:56.968306 #5574]  INFO -- cmdbuild-ubuntu: Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+I, [2017-05-12T20:37:56.968911 #5574]  INFO -- cmdbuild-ubuntu: Reading state information... 0%Reading state information... 6%Reading state information... Done
+I, [2017-05-12T20:37:57.055621 #5574]  INFO -- cmdbuild-ubuntu: The following additional packages will be installed:
+I, [2017-05-12T20:37:57.055964 #5574]  INFO -- cmdbuild-ubuntu:   python3-software-properties
+I, [2017-05-12T20:37:57.057167 #5574]  INFO -- cmdbuild-ubuntu: The following packages will be upgraded:
+I, [2017-05-12T20:37:57.057497 #5574]  INFO -- cmdbuild-ubuntu:   python3-software-properties software-properties-common
+I, [2017-05-12T20:37:57.059612 #5574]  INFO -- cmdbuild-ubuntu: 2 upgraded, 0 newly installed, 0 to remove and 41 not upgraded.
+I, [2017-05-12T20:37:57.067347 #5574]  INFO -- cmdbuild-ubuntu: Need to get 29.6 kB of archives.
+I, [2017-05-12T20:37:57.067684 #5574]  INFO -- cmdbuild-ubuntu: After this operation, 1,024 B of additional disk space will be used.
+I, [2017-05-12T20:37:57.073671 #5574]  INFO -- cmdbuild-ubuntu: 0% [Working]            Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 software-properties-common all 0.96.20.6 [9,432 B]
+I, [2017-05-12T20:37:57.075692 #5574]  INFO -- cmdbuild-ubuntu: 0% [1 software-properties-common 0 B/9,432 B 0%]                                                36% [Working]             Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python3-software-properties all 0.96.20.6 [20.1 kB]
+I, [2017-05-12T20:37:57.076452 #5574]  INFO -- cmdbuild-ubuntu: 36% [2 python3-software-properties 0 B/20.1 kB 0%]                                                  100% [Working]              Fetched 29.6 kB in 0s (0 B/s)
+I, [2017-05-12T20:37:57.267076 #5574]  INFO -- cmdbuild-ubuntu: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 51251 files and directories currently installed.)
+I, [2017-05-12T20:37:57.268935 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../software-properties-common_0.96.20.6_all.deb ...
+I, [2017-05-12T20:37:57.358183 #5574]  INFO -- cmdbuild-ubuntu: Unpacking software-properties-common (0.96.20.6) over (0.96.20.5) ...
+I, [2017-05-12T20:37:57.424213 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../python3-software-properties_0.96.20.6_all.deb ...
+I, [2017-05-12T20:37:57.502377 #5574]  INFO -- cmdbuild-ubuntu: Unpacking python3-software-properties (0.96.20.6) over (0.96.20.5) ...
+I, [2017-05-12T20:37:57.535001 #5574]  INFO -- cmdbuild-ubuntu: Processing triggers for man-db (2.7.5-1) ...
+I, [2017-05-12T20:37:57.625035 #5574]  INFO -- cmdbuild-ubuntu: Processing triggers for dbus (1.10.6-1ubuntu3.3) ...
+I, [2017-05-12T20:37:57.658676 #5574]  INFO -- cmdbuild-ubuntu: Setting up python3-software-properties (0.96.20.6) ...
+I, [2017-05-12T20:37:57.862471 #5574]  INFO -- cmdbuild-ubuntu: Setting up software-properties-common (0.96.20.6) ...
+I, [2017-05-12T20:37:58.884983 #5574]  INFO -- cmdbuild-ubuntu: Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+I, [2017-05-12T20:37:59.032428 #5574]  INFO -- cmdbuild-ubuntu: Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+I, [2017-05-12T20:37:59.033115 #5574]  INFO -- cmdbuild-ubuntu: Reading state information... 0%Reading state information... 6%Reading state information... Done
+I, [2017-05-12T20:37:59.125994 #5574]  INFO -- cmdbuild-ubuntu: The following additional packages will be installed:
+I, [2017-05-12T20:37:59.126468 #5574]  INFO -- cmdbuild-ubuntu:   libpython-stdlib libpython2.7-minimal libpython2.7-stdlib python python-apt
+I, [2017-05-12T20:37:59.126808 #5574]  INFO -- cmdbuild-ubuntu:   python-minimal python-pycurl python2.7 python2.7-minimal
+I, [2017-05-12T20:37:59.127200 #5574]  INFO -- cmdbuild-ubuntu: Suggested packages:
+I, [2017-05-12T20:37:59.127506 #5574]  INFO -- cmdbuild-ubuntu:   python-doc python-tk python-apt-dbg python-apt-doc libcurl4-gnutls-dev
+I, [2017-05-12T20:37:59.127802 #5574]  INFO -- cmdbuild-ubuntu:   python-pycurl-dbg python-pycurl-doc python2.7-doc binutils binfmt-support
+I, [2017-05-12T20:37:59.128178 #5574]  INFO -- cmdbuild-ubuntu: The following NEW packages will be installed:
+I, [2017-05-12T20:37:59.128457 #5574]  INFO -- cmdbuild-ubuntu:   libpython-stdlib libpython2.7-minimal libpython2.7-stdlib python python-apt
+I, [2017-05-12T20:37:59.128752 #5574]  INFO -- cmdbuild-ubuntu:   python-minimal python-pycurl python-software-properties python2.7
+I, [2017-05-12T20:37:59.129025 #5574]  INFO -- cmdbuild-ubuntu:   python2.7-minimal
+I, [2017-05-12T20:37:59.130352 #5574]  INFO -- cmdbuild-ubuntu: 0 upgraded, 10 newly installed, 0 to remove and 41 not upgraded.
+I, [2017-05-12T20:37:59.141587 #5574]  INFO -- cmdbuild-ubuntu: Need to get 4,118 kB of archives.
+I, [2017-05-12T20:37:59.141913 #5574]  INFO -- cmdbuild-ubuntu: After this operation, 17.6 MB of additional disk space will be used.
+I, [2017-05-12T20:37:59.149303 #5574]  INFO -- cmdbuild-ubuntu: 0% [Working]            Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython2.7-minimal amd64 2.7.12-1ubuntu0~16.04.1 [339 kB]
+I, [2017-05-12T20:37:59.159627 #5574]  INFO -- cmdbuild-ubuntu: 0% [1 libpython2.7-minimal 0 B/339 kB 0%]                                         9% [Working]            Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python2.7-minimal amd64 2.7.12-1ubuntu0~16.04.1 [1,295 kB]
+I, [2017-05-12T20:37:59.187520 #5574]  INFO -- cmdbuild-ubuntu: 9% [2 python2.7-minimal 0 B/1,295 kB 0%]                                        36% [Working]             Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python-minimal amd64 2.7.11-1 [28.2 kB]
+I, [2017-05-12T20:37:59.190293 #5574]  INFO -- cmdbuild-ubuntu: 36% [3 python-minimal 0 B/28.2 kB 0%]                                     38% [Working]             Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython2.7-stdlib amd64 2.7.12-1ubuntu0~16.04.1 [1,884 kB]
+I, [2017-05-12T20:37:59.231869 #5574]  INFO -- cmdbuild-ubuntu: 38% [4 libpython2.7-stdlib 0 B/1,884 kB 0%]                                           77% [Working]             Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python2.7 amd64 2.7.12-1ubuntu0~16.04.1 [224 kB]
+I, [2017-05-12T20:37:59.238406 #5574]  INFO -- cmdbuild-ubuntu: 77% [5 python2.7 0 B/224 kB 0%]                               83% [Working]             Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libpython-stdlib amd64 2.7.11-1 [7,656 B]
+I, [2017-05-12T20:37:59.240584 #5574]  INFO -- cmdbuild-ubuntu: 83% [6 libpython-stdlib 0 B/7,656 B 0%]                                       85% [Working]             Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python amd64 2.7.11-1 [137 kB]
+I, [2017-05-12T20:37:59.245236 #5574]  INFO -- cmdbuild-ubuntu: 85% [7 python 0 B/137 kB 0%]                            90% [Working]             Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python-apt amd64 1.1.0~beta1build1 [139 kB]
+I, [2017-05-12T20:37:59.250062 #5574]  INFO -- cmdbuild-ubuntu: 90% [8 python-apt 0 B/139 kB 0%]                                95% [Working]             Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python-pycurl amd64 7.43.0-1ubuntu1 [43.3 kB]
+I, [2017-05-12T20:37:59.252789 #5574]  INFO -- cmdbuild-ubuntu: 95% [9 python-pycurl 0 B/43.3 kB 0%]                                    98% [Working]             Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 python-software-properties all 0.96.20.6 [20.5 kB]
+I, [2017-05-12T20:37:59.253564 #5574]  INFO -- cmdbuild-ubuntu: 98% [10 python-software-properties 0 B/20.5 kB 0%]                                                  100% [Working]              Fetched 4,118 kB in 0s (37.6 MB/s)
+I, [2017-05-12T20:37:59.434908 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package libpython2.7-minimal:amd64.
+I, [2017-05-12T20:37:59.450778 #5574]  INFO -- cmdbuild-ubuntu: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 51251 files and directories currently installed.)
+I, [2017-05-12T20:37:59.452637 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../libpython2.7-minimal_2.7.12-1ubuntu0~16.04.1_amd64.deb ...
+I, [2017-05-12T20:37:59.456199 #5574]  INFO -- cmdbuild-ubuntu: Unpacking libpython2.7-minimal:amd64 (2.7.12-1ubuntu0~16.04.1) ...
+I, [2017-05-12T20:37:59.825194 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package python2.7-minimal.
+I, [2017-05-12T20:37:59.829022 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../python2.7-minimal_2.7.12-1ubuntu0~16.04.1_amd64.deb ...
+I, [2017-05-12T20:37:59.840520 #5574]  INFO -- cmdbuild-ubuntu: Unpacking python2.7-minimal (2.7.12-1ubuntu0~16.04.1) ...
+I, [2017-05-12T20:38:00.020690 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package python-minimal.
+I, [2017-05-12T20:38:00.024620 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../python-minimal_2.7.11-1_amd64.deb ...
+I, [2017-05-12T20:38:00.028370 #5574]  INFO -- cmdbuild-ubuntu: Unpacking python-minimal (2.7.11-1) ...
+I, [2017-05-12T20:38:00.088887 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package libpython2.7-stdlib:amd64.
+I, [2017-05-12T20:38:00.092886 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../libpython2.7-stdlib_2.7.12-1ubuntu0~16.04.1_amd64.deb ...
+I, [2017-05-12T20:38:00.096273 #5574]  INFO -- cmdbuild-ubuntu: Unpacking libpython2.7-stdlib:amd64 (2.7.12-1ubuntu0~16.04.1) ...
+I, [2017-05-12T20:38:00.736319 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package python2.7.
+I, [2017-05-12T20:38:00.740234 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../python2.7_2.7.12-1ubuntu0~16.04.1_amd64.deb ...
+I, [2017-05-12T20:38:00.743401 #5574]  INFO -- cmdbuild-ubuntu: Unpacking python2.7 (2.7.12-1ubuntu0~16.04.1) ...
+I, [2017-05-12T20:38:00.801774 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package libpython-stdlib:amd64.
+I, [2017-05-12T20:38:00.805573 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../libpython-stdlib_2.7.11-1_amd64.deb ...
+I, [2017-05-12T20:38:00.809110 #5574]  INFO -- cmdbuild-ubuntu: Unpacking libpython-stdlib:amd64 (2.7.11-1) ...
+I, [2017-05-12T20:38:00.841107 #5574]  INFO -- cmdbuild-ubuntu: Processing triggers for man-db (2.7.5-1) ...
+I, [2017-05-12T20:38:00.948504 #5574]  INFO -- cmdbuild-ubuntu: Processing triggers for mime-support (3.59ubuntu1) ...
+I, [2017-05-12T20:38:00.994964 #5574]  INFO -- cmdbuild-ubuntu: Setting up libpython2.7-minimal:amd64 (2.7.12-1ubuntu0~16.04.1) ...
+I, [2017-05-12T20:38:01.021623 #5574]  INFO -- cmdbuild-ubuntu: Setting up python2.7-minimal (2.7.12-1ubuntu0~16.04.1) ...
+I, [2017-05-12T20:38:01.323102 #5574]  INFO -- cmdbuild-ubuntu: Setting up python-minimal (2.7.11-1) ...
+I, [2017-05-12T20:38:01.415081 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package python.
+I, [2017-05-12T20:38:01.432588 #5574]  INFO -- cmdbuild-ubuntu: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 51997 files and directories currently installed.)
+I, [2017-05-12T20:38:01.435019 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../python_2.7.11-1_amd64.deb ...
+I, [2017-05-12T20:38:01.452281 #5574]  INFO -- cmdbuild-ubuntu: Unpacking python (2.7.11-1) ...
+I, [2017-05-12T20:38:01.538806 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package python-apt.
+I, [2017-05-12T20:38:01.542693 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../python-apt_1.1.0~beta1build1_amd64.deb ...
+I, [2017-05-12T20:38:01.557852 #5574]  INFO -- cmdbuild-ubuntu: Unpacking python-apt (1.1.0~beta1build1) ...
+I, [2017-05-12T20:38:01.643093 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package python-pycurl.
+I, [2017-05-12T20:38:01.647028 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../python-pycurl_7.43.0-1ubuntu1_amd64.deb ...
+I, [2017-05-12T20:38:01.652653 #5574]  INFO -- cmdbuild-ubuntu: Unpacking python-pycurl (7.43.0-1ubuntu1) ...
+I, [2017-05-12T20:38:01.700948 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package python-software-properties.
+I, [2017-05-12T20:38:01.704801 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../python-software-properties_0.96.20.6_all.deb ...
+I, [2017-05-12T20:38:01.714659 #5574]  INFO -- cmdbuild-ubuntu: Unpacking python-software-properties (0.96.20.6) ...
+I, [2017-05-12T20:38:01.745280 #5574]  INFO -- cmdbuild-ubuntu: Processing triggers for man-db (2.7.5-1) ...
+I, [2017-05-12T20:38:01.867084 #5574]  INFO -- cmdbuild-ubuntu: Setting up libpython2.7-stdlib:amd64 (2.7.12-1ubuntu0~16.04.1) ...
+I, [2017-05-12T20:38:01.885808 #5574]  INFO -- cmdbuild-ubuntu: Setting up python2.7 (2.7.12-1ubuntu0~16.04.1) ...
+I, [2017-05-12T20:38:02.624743 #5574]  INFO -- cmdbuild-ubuntu: Setting up libpython-stdlib:amd64 (2.7.11-1) ...
+I, [2017-05-12T20:38:02.646017 #5574]  INFO -- cmdbuild-ubuntu: Setting up python (2.7.11-1) ...
+I, [2017-05-12T20:38:02.659178 #5574]  INFO -- cmdbuild-ubuntu: Setting up python-apt (1.1.0~beta1build1) ...
+I, [2017-05-12T20:38:02.752718 #5574]  INFO -- cmdbuild-ubuntu: Setting up python-pycurl (7.43.0-1ubuntu1) ...
+I, [2017-05-12T20:38:02.819267 #5574]  INFO -- cmdbuild-ubuntu: Setting up python-software-properties (0.96.20.6) ...
+I, [2017-05-12T20:38:04.688501 #5574]  INFO -- cmdbuild-ubuntu: gpg: keyring `/tmp/tmp74ufqwbj/secring.gpg' created
+I, [2017-05-12T20:38:04.689008 #5574]  INFO -- cmdbuild-ubuntu: gpg: keyring `/tmp/tmp74ufqwbj/pubring.gpg' created
+I, [2017-05-12T20:38:04.689439 #5574]  INFO -- cmdbuild-ubuntu: gpg: requesting key 7BB9C367 from hkp server keyserver.ubuntu.com
+I, [2017-05-12T20:38:04.922569 #5574]  INFO -- cmdbuild-ubuntu: gpg: /tmp/tmp74ufqwbj/trustdb.gpg: trustdb created
+I, [2017-05-12T20:38:04.923071 #5574]  INFO -- cmdbuild-ubuntu: gpg: key 7BB9C367: public key "Launchpad PPA for Ansible, Inc." imported
+I, [2017-05-12T20:38:04.923431 #5574]  INFO -- cmdbuild-ubuntu: gpg: Total number processed: 1
+I, [2017-05-12T20:38:04.923833 #5574]  INFO -- cmdbuild-ubuntu: gpg:               imported: 1  (RSA: 1)
+I, [2017-05-12T20:38:04.959411 #5574]  INFO -- cmdbuild-ubuntu: OK
+I, [2017-05-12T20:38:05.010274 #5574]  INFO -- cmdbuild-ubuntu: 0% [Working]            Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial InRelease
+I, [2017-05-12T20:38:05.010911 #5574]  INFO -- cmdbuild-ubuntu: 0% [Connecting to security.ubuntu.com (91.189.91.26)] [Connecting to ppa.launch                                                                               Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease
+I, [2017-05-12T20:38:05.011759 #5574]  INFO -- cmdbuild-ubuntu: 0% [Waiting for headers] [Connecting to security.ubuntu.com (91.189.91.26)] [Co0% [1 InRelease gpgv 247 kB] [Waiting for headers] [Connecting to security.ubun                                                                               Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-backports InRelease
+I, [2017-05-12T20:38:05.026341 #5574]  INFO -- cmdbuild-ubuntu: 0% [1 InRelease gpgv 247 kB] [Connecting to security.ubuntu.com (91.189.91.26)]                                                                               Hit:4 http://security.ubuntu.com/ubuntu xenial-security InRelease
+I, [2017-05-12T20:38:05.153930 #5574]  INFO -- cmdbuild-ubuntu:                                                                                0% [1 InRelease gpgv 247 kB] [Connecting to ppa.launchpad.net (91.189.95.83)]                                                                             0% [Connecting to ppa.launchpad.net (91.189.95.83)]0% [2 InRelease gpgv 102 kB] [Connecting to ppa.launchpad.net (91.189.95.83)]                                                                             0% [Waiting for headers]0% [3 InRelease gpgv 102 kB] [Waiting for headers]                                                  Get:5 http://ppa.launchpad.net/ansible/ansible/ubuntu xenial InRelease [18.1 kB]
+I, [2017-05-12T20:38:05.356075 #5574]  INFO -- cmdbuild-ubuntu: 0% [3 InRelease gpgv 102 kB] [5 InRelease 12.7 kB/18.1 kB 71%]                                                              0% [5 InRelease 12.7 kB/18.1 kB 71%]0% [4 InRelease gpgv 102 kB] [5 InRelease 12.7 kB/18.1 kB 71%]                                                              0% [5 InRelease 12.7 kB/18.1 kB 71%]                                    0% [Working]0% [5 InRelease gpgv 18.1 kB]                             96% [Working]             Get:6 http://ppa.launchpad.net/ansible/ansible/ubuntu xenial/main amd64 Packages [552 B]
+I, [2017-05-12T20:38:05.437022 #5574]  INFO -- cmdbuild-ubuntu: 98% [Working]98% [6 Packages store 0 B] [Waiting for headers]                                                98% [Waiting for headers]                         Get:7 http://ppa.launchpad.net/ansible/ansible/ubuntu xenial/main Translation-en [340 B]
+I, [2017-05-12T20:38:05.438130 #5574]  INFO -- cmdbuild-ubuntu:                          100% [Working]100% [7 Translation-en store 0 B]                                 100% [Working]              Fetched 18.9 kB in 0s (43.1 kB/s)
+I, [2017-05-12T20:38:08.028060 #5574]  INFO -- cmdbuild-ubuntu: Reading package lists... 0%Reading package lists... 0%Reading package lists... 1%Reading package lists... 7%Reading package lists... 7%Reading package lists... 11%Reading package lists... 11%Reading package lists... 11%Reading package lists... 11%Reading package lists... 11%Reading package lists... 11%Reading package lists... 57%Reading package lists... 57%Reading package lists... 82%Reading package lists... 82%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 87%Reading package lists... 87%Reading package lists... 89%Reading package lists... 89%Reading package lists... 89%Reading package lists... 89%Reading package lists... 89%Reading package lists... 89%Reading package lists... 91%Reading package lists... 93%Reading package lists... 93%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 96%Reading package lists... 96%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+I, [2017-05-12T20:38:08.091240 #5574]  INFO -- cmdbuild-ubuntu: Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+I, [2017-05-12T20:38:08.243480 #5574]  INFO -- cmdbuild-ubuntu: Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+I, [2017-05-12T20:38:08.244094 #5574]  INFO -- cmdbuild-ubuntu: Reading state information... 0%Reading state information... 3%Reading state information... Done
+I, [2017-05-12T20:38:08.334847 #5574]  INFO -- cmdbuild-ubuntu: The following additional packages will be installed:
+I, [2017-05-12T20:38:08.335272 #5574]  INFO -- cmdbuild-ubuntu:   python-crypto python-ecdsa python-httplib2 python-jinja2 python-markupsafe
+I, [2017-05-12T20:38:08.335626 #5574]  INFO -- cmdbuild-ubuntu:   python-paramiko python-pkg-resources python-setuptools python-six
+I, [2017-05-12T20:38:08.335966 #5574]  INFO -- cmdbuild-ubuntu:   python-yaml sshpass
+I, [2017-05-12T20:38:08.336298 #5574]  INFO -- cmdbuild-ubuntu: Suggested packages:
+I, [2017-05-12T20:38:08.336548 #5574]  INFO -- cmdbuild-ubuntu:   python-crypto-dbg python-crypto-doc python-jinja2-doc python-setuptools-doc
+I, [2017-05-12T20:38:08.336844 #5574]  INFO -- cmdbuild-ubuntu: The following NEW packages will be installed:
+I, [2017-05-12T20:38:08.337111 #5574]  INFO -- cmdbuild-ubuntu:   ansible python-crypto python-ecdsa python-httplib2 python-jinja2
+I, [2017-05-12T20:38:08.337402 #5574]  INFO -- cmdbuild-ubuntu:   python-markupsafe python-paramiko python-pkg-resources python-setuptools
+I, [2017-05-12T20:38:08.337682 #5574]  INFO -- cmdbuild-ubuntu:   python-six python-yaml sshpass
+I, [2017-05-12T20:38:08.339206 #5574]  INFO -- cmdbuild-ubuntu: 0 upgraded, 12 newly installed, 0 to remove and 41 not upgraded.
+I, [2017-05-12T20:38:08.350014 #5574]  INFO -- cmdbuild-ubuntu: Need to get 2,974 kB of archives.
+I, [2017-05-12T20:38:08.350289 #5574]  INFO -- cmdbuild-ubuntu: After this operation, 21.0 MB of additional disk space will be used.
+I, [2017-05-12T20:38:08.361205 #5574]  INFO -- cmdbuild-ubuntu: 0% [Working]            Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python-markupsafe amd64 0.23-2build2 [15.5 kB]
+I, [2017-05-12T20:38:08.364203 #5574]  INFO -- cmdbuild-ubuntu: 0% [1 python-markupsafe 0 B/15.5 kB 0%] [Connecting to ppa.launchpad.net (91.18                                                                               2% [Connecting to ppa.launchpad.net (91.189.95.83)]                                                   Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python-jinja2 all 2.8-1 [109 kB]
+I, [2017-05-12T20:38:08.369277 #5574]  INFO -- cmdbuild-ubuntu: 2% [2 python-jinja2 0 B/109 kB 0%] [Connecting to ppa.launchpad.net (91.189.95.                                                                               7% [Connecting to ppa.launchpad.net (91.189.95.83)]                                                   Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python-yaml amd64 3.11-3build1 [105 kB]
+I, [2017-05-12T20:38:08.373970 #5574]  INFO -- cmdbuild-ubuntu: 7% [3 python-yaml 0 B/105 kB 0%] [Connecting to ppa.launchpad.net (91.189.95.83                                                                               11% [Connecting to ppa.launchpad.net (91.189.95.83)]                                                    Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python-crypto amd64 2.6.1-6ubuntu0.16.04.2 [246 kB]
+I, [2017-05-12T20:38:08.381036 #5574]  INFO -- cmdbuild-ubuntu: 11% [4 python-crypto 0 B/246 kB 0%] [Connecting to ppa.launchpad.net (91.189.95                                                                               19% [Connecting to ppa.launchpad.net (91.189.95.83)]                                                    Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python-six all 1.10.0-3 [10.9 kB]
+I, [2017-05-12T20:38:08.383784 #5574]  INFO -- cmdbuild-ubuntu: 19% [5 python-six 0 B/10.9 kB 0%] [Connecting to ppa.launchpad.net (91.189.95.8                                                                               21% [Connecting to ppa.launchpad.net (91.189.95.83)]                                                    Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python-ecdsa all 0.13-2 [34.0 kB]
+I, [2017-05-12T20:38:08.387119 #5574]  INFO -- cmdbuild-ubuntu: 21% [6 python-ecdsa 0 B/34.0 kB 0%] [Connecting to ppa.launchpad.net (91.189.95                                                                               24% [Connecting to ppa.launchpad.net (91.189.95.83)]                                                    Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python-paramiko all 1.16.0-1 [109 kB]
+I, [2017-05-12T20:38:08.392206 #5574]  INFO -- cmdbuild-ubuntu: 24% [7 python-paramiko 0 B/109 kB 0%] [Connecting to ppa.launchpad.net (91.189.                                                                               29% [Connecting to ppa.launchpad.net (91.189.95.83)]                                                    Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python-httplib2 all 0.9.1+dfsg-1 [34.2 kB]
+I, [2017-05-12T20:38:08.395630 #5574]  INFO -- cmdbuild-ubuntu: 29% [8 python-httplib2 0 B/34.2 kB 0%] [Connecting to ppa.launchpad.net (91.189                                                                               31% [Connecting to ppa.launchpad.net (91.189.95.83)]                                                    Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python-pkg-resources all 20.7.0-1 [108 kB]
+I, [2017-05-12T20:38:08.400394 #5574]  INFO -- cmdbuild-ubuntu: 31% [9 python-pkg-resources 0 B/108 kB 0%] [Connecting to ppa.launchpad.net (91                                                                               36% [Connecting to ppa.launchpad.net (91.189.95.83)]                                                    Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python-setuptools all 20.7.0-1 [169 kB]
+I, [2017-05-12T20:38:08.407271 #5574]  INFO -- cmdbuild-ubuntu: 36% [10 python-setuptools 0 B/169 kB 0%] [Connecting to ppa.launchpad.net (91.1                                                                               42% [Connecting to ppa.launchpad.net (91.189.95.83)]                                                    Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/universe amd64 sshpass amd64 1.05-1 [10.5 kB]
+I, [2017-05-12T20:38:08.508214 #5574]  INFO -- cmdbuild-ubuntu: 42% [11 sshpass 0 B/10.5 kB 0%] [Connecting to ppa.launchpad.net (91.189.95.83)                                                                               44% [Connecting to ppa.launchpad.net (91.189.95.83)]                                                    Get:12 http://ppa.launchpad.net/ansible/ansible/ubuntu xenial/main amd64 ansible all 2.3.0.0-1ppa~xenial [2,024 kB]
+I, [2017-05-12T20:38:09.757294 #5574]  INFO -- cmdbuild-ubuntu:                                                     44% [12 ansible 14.2 kB/2,024 kB 1%]60% [12 ansible 583 kB/2,024 kB 29%]88% [12 ansible 1,630 kB/2,024 kB 81%]                                      100% [Working]              Fetched 2,974 kB in 1s (2,120 kB/s)
+I, [2017-05-12T20:38:09.934383 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package python-markupsafe.
+I, [2017-05-12T20:38:09.949779 #5574]  INFO -- cmdbuild-ubuntu: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 52104 files and directories currently installed.)
+I, [2017-05-12T20:38:09.951386 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../python-markupsafe_0.23-2build2_amd64.deb ...
+I, [2017-05-12T20:38:09.954903 #5574]  INFO -- cmdbuild-ubuntu: Unpacking python-markupsafe (0.23-2build2) ...
+I, [2017-05-12T20:38:10.009370 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package python-jinja2.
+I, [2017-05-12T20:38:10.013235 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../python-jinja2_2.8-1_all.deb ...
+I, [2017-05-12T20:38:10.016387 #5574]  INFO -- cmdbuild-ubuntu: Unpacking python-jinja2 (2.8-1) ...
+I, [2017-05-12T20:38:10.081225 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package python-yaml.
+I, [2017-05-12T20:38:10.085037 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../python-yaml_3.11-3build1_amd64.deb ...
+I, [2017-05-12T20:38:10.088527 #5574]  INFO -- cmdbuild-ubuntu: Unpacking python-yaml (3.11-3build1) ...
+I, [2017-05-12T20:38:10.158760 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package python-crypto.
+I, [2017-05-12T20:38:10.162452 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../python-crypto_2.6.1-6ubuntu0.16.04.2_amd64.deb ...
+I, [2017-05-12T20:38:10.166185 #5574]  INFO -- cmdbuild-ubuntu: Unpacking python-crypto (2.6.1-6ubuntu0.16.04.2) ...
+I, [2017-05-12T20:38:10.334017 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package python-six.
+I, [2017-05-12T20:38:10.337949 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../python-six_1.10.0-3_all.deb ...
+I, [2017-05-12T20:38:10.341681 #5574]  INFO -- cmdbuild-ubuntu: Unpacking python-six (1.10.0-3) ...
+I, [2017-05-12T20:38:10.379872 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package python-ecdsa.
+I, [2017-05-12T20:38:10.383774 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../python-ecdsa_0.13-2_all.deb ...
+I, [2017-05-12T20:38:10.387018 #5574]  INFO -- cmdbuild-ubuntu: Unpacking python-ecdsa (0.13-2) ...
+I, [2017-05-12T20:38:10.446131 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package python-paramiko.
+I, [2017-05-12T20:38:10.450050 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../python-paramiko_1.16.0-1_all.deb ...
+I, [2017-05-12T20:38:10.453465 #5574]  INFO -- cmdbuild-ubuntu: Unpacking python-paramiko (1.16.0-1) ...
+I, [2017-05-12T20:38:10.519665 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package python-httplib2.
+I, [2017-05-12T20:38:10.523566 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../python-httplib2_0.9.1+dfsg-1_all.deb ...
+I, [2017-05-12T20:38:10.527349 #5574]  INFO -- cmdbuild-ubuntu: Unpacking python-httplib2 (0.9.1+dfsg-1) ...
+I, [2017-05-12T20:38:10.585543 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package python-pkg-resources.
+I, [2017-05-12T20:38:10.589582 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../python-pkg-resources_20.7.0-1_all.deb ...
+I, [2017-05-12T20:38:10.593016 #5574]  INFO -- cmdbuild-ubuntu: Unpacking python-pkg-resources (20.7.0-1) ...
+I, [2017-05-12T20:38:10.657192 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package python-setuptools.
+I, [2017-05-12T20:38:10.661043 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../python-setuptools_20.7.0-1_all.deb ...
+I, [2017-05-12T20:38:10.664490 #5574]  INFO -- cmdbuild-ubuntu: Unpacking python-setuptools (20.7.0-1) ...
+I, [2017-05-12T20:38:10.733434 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package sshpass.
+I, [2017-05-12T20:38:10.737149 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../sshpass_1.05-1_amd64.deb ...
+I, [2017-05-12T20:38:10.743597 #5574]  INFO -- cmdbuild-ubuntu: Unpacking sshpass (1.05-1) ...
+I, [2017-05-12T20:38:10.801765 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package ansible.
+I, [2017-05-12T20:38:10.805500 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../ansible_2.3.0.0-1ppa~xenial_all.deb ...
+I, [2017-05-12T20:38:10.808671 #5574]  INFO -- cmdbuild-ubuntu: Unpacking ansible (2.3.0.0-1ppa~xenial) ...
+I, [2017-05-12T20:38:12.311657 #5574]  INFO -- cmdbuild-ubuntu: Processing triggers for man-db (2.7.5-1) ...
+I, [2017-05-12T20:38:12.450676 #5574]  INFO -- cmdbuild-ubuntu: Setting up python-markupsafe (0.23-2build2) ...
+I, [2017-05-12T20:38:12.517620 #5574]  INFO -- cmdbuild-ubuntu: Setting up python-jinja2 (2.8-1) ...
+I, [2017-05-12T20:38:12.629739 #5574]  INFO -- cmdbuild-ubuntu: Setting up python-yaml (3.11-3build1) ...
+I, [2017-05-12T20:38:12.731697 #5574]  INFO -- cmdbuild-ubuntu: Setting up python-crypto (2.6.1-6ubuntu0.16.04.2) ...
+I, [2017-05-12T20:38:12.895432 #5574]  INFO -- cmdbuild-ubuntu: Setting up python-six (1.10.0-3) ...
+I, [2017-05-12T20:38:12.963221 #5574]  INFO -- cmdbuild-ubuntu: Setting up python-ecdsa (0.13-2) ...
+I, [2017-05-12T20:38:13.044873 #5574]  INFO -- cmdbuild-ubuntu: Setting up python-paramiko (1.16.0-1) ...
+I, [2017-05-12T20:38:13.181966 #5574]  INFO -- cmdbuild-ubuntu: Setting up python-httplib2 (0.9.1+dfsg-1) ...
+I, [2017-05-12T20:38:13.257974 #5574]  INFO -- cmdbuild-ubuntu: Setting up python-pkg-resources (20.7.0-1) ...
+I, [2017-05-12T20:38:13.372855 #5574]  INFO -- cmdbuild-ubuntu: Setting up python-setuptools (20.7.0-1) ...
+I, [2017-05-12T20:38:13.502245 #5574]  INFO -- cmdbuild-ubuntu: Setting up sshpass (1.05-1) ...
+I, [2017-05-12T20:38:13.517850 #5574]  INFO -- cmdbuild-ubuntu: Setting up ansible (2.3.0.0-1ppa~xenial) ...
+I, [2017-05-12T20:38:16.050144 #5574]  INFO -- cmdbuild-ubuntu: 0% [Working]            Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial InRelease
+I, [2017-05-12T20:38:16.050824 #5574]  INFO -- cmdbuild-ubuntu: 0% [Connecting to security.ubuntu.com (91.189.91.23)] [Connecting to ppa.launch                                                                               Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease
+I, [2017-05-12T20:38:16.051434 #5574]  INFO -- cmdbuild-ubuntu:                                                                                Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-backports InRelease
+I, [2017-05-12T20:38:16.070481 #5574]  INFO -- cmdbuild-ubuntu: 0% [Connecting to security.ubuntu.com (91.189.91.23)] [Connecting to ppa.launch0% [1 InRelease gpgv 247 kB] [Connecting to security.ubuntu.com (91.189.91.23)]                                                                               Hit:4 http://security.ubuntu.com/ubuntu xenial-security InRelease
+I, [2017-05-12T20:38:16.355089 #5574]  INFO -- cmdbuild-ubuntu:                                                                                0% [1 InRelease gpgv 247 kB] [Connecting to ppa.launchpad.net (91.189.95.83)]                                                                             0% [Connecting to ppa.launchpad.net (91.189.95.83)]0% [2 InRelease gpgv 102 kB] [Connecting to ppa.launchpad.net (91.189.95.83)]                                                                             0% [Waiting for headers]0% [3 InRelease gpgv 102 kB] [Waiting for headers]                                                  0% [Waiting for headers]0% [4 InRelease gpgv 102 kB] [Waiting for headers]                                                  0% [Waiting for headers]                        Hit:5 http://ppa.launchpad.net/ansible/ansible/ubuntu xenial InRelease
+I, [2017-05-12T20:38:17.256915 #5574]  INFO -- cmdbuild-ubuntu:                         0% [Working]0% [5 InRelease gpgv 18.1 kB]                             20% [Working]             Reading package lists... 0%Reading package lists... 0%Reading package lists... 1%Reading package lists... 7%Reading package lists... 7%Reading package lists... 11%Reading package lists... 11%Reading package lists... 11%Reading package lists... 11%Reading package lists... 11%Reading package lists... 11%Reading package lists... 57%Reading package lists... 57%Reading package lists... 82%Reading package lists... 82%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 87%Reading package lists... 87%Reading package lists... 89%Reading package lists... 89%Reading package lists... 89%Reading package lists... 89%Reading package lists... 89%Reading package lists... 89%Reading package lists... 93%Reading package lists... 93%Reading package lists... 93%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 96%Reading package lists... 96%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+I, [2017-05-12T20:38:17.439445 #5574]  INFO -- cmdbuild-ubuntu: Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+I, [2017-05-12T20:38:17.573817 #5574]  INFO -- cmdbuild-ubuntu: Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+I, [2017-05-12T20:38:17.574434 #5574]  INFO -- cmdbuild-ubuntu: Reading state information... 0%Reading state information... 2%Reading state information... Done
+I, [2017-05-12T20:38:17.666140 #5574]  INFO -- cmdbuild-ubuntu: The following additional packages will be installed:
+I, [2017-05-12T20:38:17.666579 #5574]  INFO -- cmdbuild-ubuntu:   fonts-lato javascript-common libgmp-dev libgmpxx4ldbl libjs-jquery
+I, [2017-05-12T20:38:17.666942 #5574]  INFO -- cmdbuild-ubuntu:   libruby2.3 rake ruby-did-you-mean ruby-minitest ruby-net-telnet
+I, [2017-05-12T20:38:17.667246 #5574]  INFO -- cmdbuild-ubuntu:   ruby-power-assert ruby-test-unit ruby2.3 ruby2.3-dev rubygems-integration
+I, [2017-05-12T20:38:17.667601 #5574]  INFO -- cmdbuild-ubuntu:   unzip zip
+I, [2017-05-12T20:38:17.667966 #5574]  INFO -- cmdbuild-ubuntu: Suggested packages:
+I, [2017-05-12T20:38:17.668229 #5574]  INFO -- cmdbuild-ubuntu:   apache2 | lighttpd | httpd gmp-doc libgmp10-doc libmpfr-dev ri bundler
+I, [2017-05-12T20:38:17.668512 #5574]  INFO -- cmdbuild-ubuntu: The following NEW packages will be installed:
+I, [2017-05-12T20:38:17.668785 #5574]  INFO -- cmdbuild-ubuntu:   fonts-lato javascript-common libgmp-dev libgmpxx4ldbl libjs-jquery
+I, [2017-05-12T20:38:17.669070 #5574]  INFO -- cmdbuild-ubuntu:   libruby2.3 rake ruby ruby-dev ruby-did-you-mean ruby-minitest
+I, [2017-05-12T20:38:17.669363 #5574]  INFO -- cmdbuild-ubuntu:   ruby-net-telnet ruby-power-assert ruby-test-unit ruby2.3 ruby2.3-dev
+I, [2017-05-12T20:38:17.669709 #5574]  INFO -- cmdbuild-ubuntu:   rubygems-integration unzip zip
+I, [2017-05-12T20:38:17.671357 #5574]  INFO -- cmdbuild-ubuntu: 0 upgraded, 19 newly installed, 0 to remove and 41 not upgraded.
+I, [2017-05-12T20:38:17.682139 #5574]  INFO -- cmdbuild-ubuntu: Need to get 7,720 kB of archives.
+I, [2017-05-12T20:38:17.682420 #5574]  INFO -- cmdbuild-ubuntu: After this operation, 35.1 MB of additional disk space will be used.
+I, [2017-05-12T20:38:17.690064 #5574]  INFO -- cmdbuild-ubuntu: 0% [Working]            Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 fonts-lato all 2.0-1 [2,693 kB]
+I, [2017-05-12T20:38:17.737122 #5574]  INFO -- cmdbuild-ubuntu: 0% [1 fonts-lato 0 B/2,693 kB 0%]                                 29% [Working]             Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 javascript-common all 11 [6,066 B]
+I, [2017-05-12T20:38:17.739363 #5574]  INFO -- cmdbuild-ubuntu: 29% [2 javascript-common 0 B/6,066 B 0%]                                        30% [Working]             Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libgmpxx4ldbl amd64 2:6.1.0+dfsg-2 [8,948 B]
+I, [2017-05-12T20:38:17.741749 #5574]  INFO -- cmdbuild-ubuntu: 30% [3 libgmpxx4ldbl 0 B/8,948 B 0%]                                    31% [Working]             Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libgmp-dev amd64 2:6.1.0+dfsg-2 [314 kB]
+I, [2017-05-12T20:38:17.748728 #5574]  INFO -- cmdbuild-ubuntu: 31% [4 libgmp-dev 0 B/314 kB 0%]                                36% [Working]             Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libjs-jquery all 1.11.3+dfsg-4 [161 kB]
+I, [2017-05-12T20:38:17.753190 #5574]  INFO -- cmdbuild-ubuntu: 36% [5 libjs-jquery 0 B/161 kB 0%]                                  38% [Working]             Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 rubygems-integration all 1.10 [4,966 B]
+I, [2017-05-12T20:38:17.755473 #5574]  INFO -- cmdbuild-ubuntu: 38% [6 rubygems-integration 0 B/4,966 B 0%]                                           39% [Working]             Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 ruby-did-you-mean all 1.0.0-2 [8,390 B]
+I, [2017-05-12T20:38:17.757590 #5574]  INFO -- cmdbuild-ubuntu: 39% [7 ruby-did-you-mean 0 B/8,390 B 0%]                                        40% [Working]             Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 ruby-minitest all 5.8.4-2 [36.6 kB]
+I, [2017-05-12T20:38:17.760429 #5574]  INFO -- cmdbuild-ubuntu: 40% [8 ruby-minitest 0 B/36.6 kB 0%]                                    42% [Working]             Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 ruby-net-telnet all 0.1.1-2 [12.6 kB]
+I, [2017-05-12T20:38:17.762508 #5574]  INFO -- cmdbuild-ubuntu: 42% [9 ruby-net-telnet 0 B/12.6 kB 0%]                                      43% [Working]             Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 ruby-power-assert all 0.2.7-1 [7,668 B]
+I, [2017-05-12T20:38:17.764795 #5574]  INFO -- cmdbuild-ubuntu: 43% [10 ruby-power-assert 0 B/7,668 B 0%]                                         44% [Working]             Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 ruby-test-unit all 3.1.7-2 [60.3 kB]
+I, [2017-05-12T20:38:17.767972 #5574]  INFO -- cmdbuild-ubuntu: 44% [11 ruby-test-unit 0 B/60.3 kB 0%]                                      46% [Working]             Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libruby2.3 amd64 2.3.1-2~16.04 [2,957 kB]
+I, [2017-05-12T20:38:17.812817 #5574]  INFO -- cmdbuild-ubuntu: 46% [12 libruby2.3 0 B/2,957 kB 0%]                                   78% [Working]             Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ruby2.3 amd64 2.3.1-2~16.04 [40.9 kB]
+I, [2017-05-12T20:38:17.815396 #5574]  INFO -- cmdbuild-ubuntu: 78% [13 ruby2.3 0 B/40.9 kB 0%]                               79% [Working]             Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 ruby all 1:2.3.0+1 [5,530 B]
+I, [2017-05-12T20:38:17.817767 #5574]  INFO -- cmdbuild-ubuntu: 79% [14 ruby 0 B/5,530 B 0%]                            80% [Working]             Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 rake all 10.5.0-2 [48.2 kB]
+I, [2017-05-12T20:38:17.820527 #5574]  INFO -- cmdbuild-ubuntu: 80% [15 rake 0 B/48.2 kB 0%]                            82% [Working]             Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ruby2.3-dev amd64 2.3.1-2~16.04 [1,034 kB]
+I, [2017-05-12T20:38:17.837592 #5574]  INFO -- cmdbuild-ubuntu: 82% [16 ruby2.3-dev 0 B/1,034 kB 0%]                                    94% [Working]             Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 ruby-dev amd64 1:2.3.0+1 [4,408 B]
+I, [2017-05-12T20:38:17.839784 #5574]  INFO -- cmdbuild-ubuntu: 94% [17 ruby-dev 0 B/4,408 B 0%]                                95% [Working]             Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 unzip amd64 6.0-20ubuntu1 [158 kB]
+I, [2017-05-12T20:38:17.844225 #5574]  INFO -- cmdbuild-ubuntu: 95% [18 unzip 0 B/158 kB 0%]                            97% [Working]             Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 zip amd64 3.0-11 [158 kB]
+I, [2017-05-12T20:38:17.846987 #5574]  INFO -- cmdbuild-ubuntu: 97% [19 zip 0 B/158 kB 0%]                          100% [Working]              Fetched 7,720 kB in 0s (47.5 MB/s)
+I, [2017-05-12T20:38:18.019748 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package fonts-lato.
+I, [2017-05-12T20:38:18.036126 #5574]  INFO -- cmdbuild-ubuntu: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 54321 files and directories currently installed.)
+I, [2017-05-12T20:38:18.037934 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../fonts-lato_2.0-1_all.deb ...
+I, [2017-05-12T20:38:18.041340 #5574]  INFO -- cmdbuild-ubuntu: Unpacking fonts-lato (2.0-1) ...
+I, [2017-05-12T20:38:18.378215 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package javascript-common.
+I, [2017-05-12T20:38:18.382082 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../javascript-common_11_all.deb ...
+I, [2017-05-12T20:38:18.388533 #5574]  INFO -- cmdbuild-ubuntu: Unpacking javascript-common (11) ...
+I, [2017-05-12T20:38:18.434405 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package libgmpxx4ldbl:amd64.
+I, [2017-05-12T20:38:18.438350 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../libgmpxx4ldbl_2%3a6.1.0+dfsg-2_amd64.deb ...
+I, [2017-05-12T20:38:18.457061 #5574]  INFO -- cmdbuild-ubuntu: Unpacking libgmpxx4ldbl:amd64 (2:6.1.0+dfsg-2) ...
+I, [2017-05-12T20:38:18.484948 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package libgmp-dev:amd64.
+I, [2017-05-12T20:38:18.489061 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../libgmp-dev_2%3a6.1.0+dfsg-2_amd64.deb ...
+I, [2017-05-12T20:38:18.497307 #5574]  INFO -- cmdbuild-ubuntu: Unpacking libgmp-dev:amd64 (2:6.1.0+dfsg-2) ...
+I, [2017-05-12T20:38:18.568231 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package libjs-jquery.
+I, [2017-05-12T20:38:18.572262 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../libjs-jquery_1.11.3+dfsg-4_all.deb ...
+I, [2017-05-12T20:38:18.575494 #5574]  INFO -- cmdbuild-ubuntu: Unpacking libjs-jquery (1.11.3+dfsg-4) ...
+I, [2017-05-12T20:38:18.631384 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package rubygems-integration.
+I, [2017-05-12T20:38:18.635419 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../rubygems-integration_1.10_all.deb ...
+I, [2017-05-12T20:38:18.639052 #5574]  INFO -- cmdbuild-ubuntu: Unpacking rubygems-integration (1.10) ...
+I, [2017-05-12T20:38:18.681212 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package ruby-did-you-mean.
+I, [2017-05-12T20:38:18.684402 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../ruby-did-you-mean_1.0.0-2_all.deb ...
+I, [2017-05-12T20:38:18.687789 #5574]  INFO -- cmdbuild-ubuntu: Unpacking ruby-did-you-mean (1.0.0-2) ...
+I, [2017-05-12T20:38:18.744583 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package ruby-minitest.
+I, [2017-05-12T20:38:18.747742 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../ruby-minitest_5.8.4-2_all.deb ...
+I, [2017-05-12T20:38:18.751323 #5574]  INFO -- cmdbuild-ubuntu: Unpacking ruby-minitest (5.8.4-2) ...
+I, [2017-05-12T20:38:18.808606 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package ruby-net-telnet.
+I, [2017-05-12T20:38:18.811785 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../ruby-net-telnet_0.1.1-2_all.deb ...
+I, [2017-05-12T20:38:18.815086 #5574]  INFO -- cmdbuild-ubuntu: Unpacking ruby-net-telnet (0.1.1-2) ...
+I, [2017-05-12T20:38:18.860214 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package ruby-power-assert.
+I, [2017-05-12T20:38:18.863318 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../ruby-power-assert_0.2.7-1_all.deb ...
+I, [2017-05-12T20:38:18.867069 #5574]  INFO -- cmdbuild-ubuntu: Unpacking ruby-power-assert (0.2.7-1) ...
+I, [2017-05-12T20:38:18.915172 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package ruby-test-unit.
+I, [2017-05-12T20:38:18.918532 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../ruby-test-unit_3.1.7-2_all.deb ...
+I, [2017-05-12T20:38:18.922085 #5574]  INFO -- cmdbuild-ubuntu: Unpacking ruby-test-unit (3.1.7-2) ...
+I, [2017-05-12T20:38:19.018821 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package libruby2.3:amd64.
+I, [2017-05-12T20:38:19.022251 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../libruby2.3_2.3.1-2~16.04_amd64.deb ...
+I, [2017-05-12T20:38:19.025569 #5574]  INFO -- cmdbuild-ubuntu: Unpacking libruby2.3:amd64 (2.3.1-2~16.04) ...
+I, [2017-05-12T20:38:20.126382 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package ruby2.3.
+I, [2017-05-12T20:38:20.130191 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../ruby2.3_2.3.1-2~16.04_amd64.deb ...
+I, [2017-05-12T20:38:20.133569 #5574]  INFO -- cmdbuild-ubuntu: Unpacking ruby2.3 (2.3.1-2~16.04) ...
+I, [2017-05-12T20:38:20.208118 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package ruby.
+I, [2017-05-12T20:38:20.211743 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../ruby_1%3a2.3.0+1_all.deb ...
+I, [2017-05-12T20:38:20.217451 #5574]  INFO -- cmdbuild-ubuntu: Unpacking ruby (1:2.3.0+1) ...
+I, [2017-05-12T20:38:20.255636 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package rake.
+I, [2017-05-12T20:38:20.259144 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../archives/rake_10.5.0-2_all.deb ...
+I, [2017-05-12T20:38:20.269314 #5574]  INFO -- cmdbuild-ubuntu: Unpacking rake (10.5.0-2) ...
+I, [2017-05-12T20:38:20.353755 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package ruby2.3-dev:amd64.
+I, [2017-05-12T20:38:20.357156 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../ruby2.3-dev_2.3.1-2~16.04_amd64.deb ...
+I, [2017-05-12T20:38:20.360453 #5574]  INFO -- cmdbuild-ubuntu: Unpacking ruby2.3-dev:amd64 (2.3.1-2~16.04) ...
+I, [2017-05-12T20:38:20.545354 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package ruby-dev:amd64.
+I, [2017-05-12T20:38:20.548750 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../ruby-dev_1%3a2.3.0+1_amd64.deb ...
+I, [2017-05-12T20:38:20.551860 #5574]  INFO -- cmdbuild-ubuntu: Unpacking ruby-dev:amd64 (1:2.3.0+1) ...
+I, [2017-05-12T20:38:20.611219 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package unzip.
+I, [2017-05-12T20:38:20.614653 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../unzip_6.0-20ubuntu1_amd64.deb ...
+I, [2017-05-12T20:38:20.618333 #5574]  INFO -- cmdbuild-ubuntu: Unpacking unzip (6.0-20ubuntu1) ...
+I, [2017-05-12T20:38:20.671223 #5574]  INFO -- cmdbuild-ubuntu: Selecting previously unselected package zip.
+I, [2017-05-12T20:38:20.674384 #5574]  INFO -- cmdbuild-ubuntu: Preparing to unpack .../archives/zip_3.0-11_amd64.deb ...
+I, [2017-05-12T20:38:20.677828 #5574]  INFO -- cmdbuild-ubuntu: Unpacking zip (3.0-11) ...
+I, [2017-05-12T20:38:20.732157 #5574]  INFO -- cmdbuild-ubuntu: Processing triggers for libc-bin (2.23-0ubuntu7) ...
+I, [2017-05-12T20:38:20.745690 #5574]  INFO -- cmdbuild-ubuntu: Processing triggers for man-db (2.7.5-1) ...
+I, [2017-05-12T20:38:20.858594 #5574]  INFO -- cmdbuild-ubuntu: Processing triggers for mime-support (3.59ubuntu1) ...
+I, [2017-05-12T20:38:20.904612 #5574]  INFO -- cmdbuild-ubuntu: Setting up fonts-lato (2.0-1) ...
+I, [2017-05-12T20:38:20.932812 #5574]  INFO -- cmdbuild-ubuntu: Setting up javascript-common (11) ...
+I, [2017-05-12T20:38:20.958167 #5574]  INFO -- cmdbuild-ubuntu: Setting up libgmpxx4ldbl:amd64 (2:6.1.0+dfsg-2) ...
+I, [2017-05-12T20:38:20.972172 #5574]  INFO -- cmdbuild-ubuntu: Setting up libgmp-dev:amd64 (2:6.1.0+dfsg-2) ...
+I, [2017-05-12T20:38:20.986399 #5574]  INFO -- cmdbuild-ubuntu: Setting up libjs-jquery (1.11.3+dfsg-4) ...
+I, [2017-05-12T20:38:20.996330 #5574]  INFO -- cmdbuild-ubuntu: Setting up rubygems-integration (1.10) ...
+I, [2017-05-12T20:38:21.018178 #5574]  INFO -- cmdbuild-ubuntu: Setting up ruby-did-you-mean (1.0.0-2) ...
+I, [2017-05-12T20:38:21.046676 #5574]  INFO -- cmdbuild-ubuntu: Setting up ruby-minitest (5.8.4-2) ...
+I, [2017-05-12T20:38:21.055796 #5574]  INFO -- cmdbuild-ubuntu: Setting up ruby-net-telnet (0.1.1-2) ...
+I, [2017-05-12T20:38:21.066348 #5574]  INFO -- cmdbuild-ubuntu: Setting up ruby-power-assert (0.2.7-1) ...
+I, [2017-05-12T20:38:21.080102 #5574]  INFO -- cmdbuild-ubuntu: Setting up ruby-test-unit (3.1.7-2) ...
+I, [2017-05-12T20:38:21.089669 #5574]  INFO -- cmdbuild-ubuntu: Setting up unzip (6.0-20ubuntu1) ...
+I, [2017-05-12T20:38:21.109853 #5574]  INFO -- cmdbuild-ubuntu: Setting up zip (3.0-11) ...
+I, [2017-05-12T20:38:21.120538 #5574]  INFO -- cmdbuild-ubuntu: Setting up libruby2.3:amd64 (2.3.1-2~16.04) ...
+I, [2017-05-12T20:38:21.129921 #5574]  INFO -- cmdbuild-ubuntu: Setting up ruby2.3 (2.3.1-2~16.04) ...
+I, [2017-05-12T20:38:21.160815 #5574]  INFO -- cmdbuild-ubuntu: Setting up ruby2.3-dev:amd64 (2.3.1-2~16.04) ...
+I, [2017-05-12T20:38:21.170249 #5574]  INFO -- cmdbuild-ubuntu: Setting up ruby-dev:amd64 (1:2.3.0+1) ...
+I, [2017-05-12T20:38:21.180677 #5574]  INFO -- cmdbuild-ubuntu: Setting up ruby (1:2.3.0+1) ...
+I, [2017-05-12T20:38:21.202451 #5574]  INFO -- cmdbuild-ubuntu: Setting up rake (10.5.0-2) ...
+I, [2017-05-12T20:38:21.211682 #5574]  INFO -- cmdbuild-ubuntu: Processing triggers for libc-bin (2.23-0ubuntu7) ...
+I, [2017-05-12T20:38:22.095216 #5574]  INFO -- cmdbuild-ubuntu: bash: line 260: [: -eq: unary operator expected
+I, [2017-05-12T20:38:22.104602 #5574]  INFO -- cmdbuild-ubuntu: Transferring files to <cmdbuild-ubuntu>
+I, [2017-05-12T20:38:22.120945 #5574]  INFO -- cmdbuild-ubuntu: [SFTP] Time taken to upload /tmp/cmdbuild-ubuntu-sandbox-20170512-5574-10lbp0z/ansible.cfg to ubuntu@ec2-34-201-112-113.compute-1.amazonaws.com<{:user_known_hosts_file=>"/dev/null", :paranoid=>false, :port=>22, :compression=>false, :compression_level=>0, :keepalive=>true, :keepalive_interval=>60, :timeout=>15, :keys_only=>true, :keys=>["/var/jenkins_home/.ssh/apcela-cmdbuild.pem"], :auth_methods=>["publickey"], :logger=>#<Logger:0x000000066916c0 @progname=nil, @level=4, @default_formatter=#<Logger::Formatter:0x00000006691698 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x00000006691648 @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @mutex=#<Logger::LogDevice::LogDeviceMutex:0x000000066915f8 @mon_owner=nil, @mon_count=0, @mon_mutex=#<Mutex:0x00000006691558>>>>, :password_prompt=>#<Net::SSH::Prompt:0x00000006691530>, :user=>"ubuntu"}>:/tmp/kitchen/ansible.cfg: 0.02 sec
+I, [2017-05-12T20:38:22.123905 #5574]  INFO -- cmdbuild-ubuntu: [SFTP] Time taken to upload /tmp/cmdbuild-ubuntu-sandbox-20170512-5574-10lbp0z/spec to ubuntu@ec2-34-201-112-113.compute-1.amazonaws.com<{:user_known_hosts_file=>"/dev/null", :paranoid=>false, :port=>22, :compression=>false, :compression_level=>0, :keepalive=>true, :keepalive_interval=>60, :timeout=>15, :keys_only=>true, :keys=>["/var/jenkins_home/.ssh/apcela-cmdbuild.pem"], :auth_methods=>["publickey"], :logger=>#<Logger:0x000000066916c0 @progname=nil, @level=4, @default_formatter=#<Logger::Formatter:0x00000006691698 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x00000006691648 @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @mutex=#<Logger::LogDevice::LogDeviceMutex:0x000000066915f8 @mon_owner=nil, @mon_count=0, @mon_mutex=#<Mutex:0x00000006691558>>>>, :password_prompt=>#<Net::SSH::Prompt:0x00000006691530>, :user=>"ubuntu"}>:/tmp/kitchen/spec: 0.00 sec
+I, [2017-05-12T20:38:22.152532 #5574]  INFO -- cmdbuild-ubuntu: [SFTP] Time taken to upload /tmp/cmdbuild-ubuntu-sandbox-20170512-5574-10lbp0z/roles to ubuntu@ec2-34-201-112-113.compute-1.amazonaws.com<{:user_known_hosts_file=>"/dev/null", :paranoid=>false, :port=>22, :compression=>false, :compression_level=>0, :keepalive=>true, :keepalive_interval=>60, :timeout=>15, :keys_only=>true, :keys=>["/var/jenkins_home/.ssh/apcela-cmdbuild.pem"], :auth_methods=>["publickey"], :logger=>#<Logger:0x000000066916c0 @progname=nil, @level=4, @default_formatter=#<Logger::Formatter:0x00000006691698 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x00000006691648 @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @mutex=#<Logger::LogDevice::LogDeviceMutex:0x000000066915f8 @mon_owner=nil, @mon_count=0, @mon_mutex=#<Mutex:0x00000006691558>>>>, :password_prompt=>#<Net::SSH::Prompt:0x00000006691530>, :user=>"ubuntu"}>:/tmp/kitchen/roles: 0.03 sec
+I, [2017-05-12T20:38:22.155316 #5574]  INFO -- cmdbuild-ubuntu: [SFTP] Time taken to upload /tmp/cmdbuild-ubuntu-sandbox-20170512-5574-10lbp0z/modules to ubuntu@ec2-34-201-112-113.compute-1.amazonaws.com<{:user_known_hosts_file=>"/dev/null", :paranoid=>false, :port=>22, :compression=>false, :compression_level=>0, :keepalive=>true, :keepalive_interval=>60, :timeout=>15, :keys_only=>true, :keys=>["/var/jenkins_home/.ssh/apcela-cmdbuild.pem"], :auth_methods=>["publickey"], :logger=>#<Logger:0x000000066916c0 @progname=nil, @level=4, @default_formatter=#<Logger::Formatter:0x00000006691698 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x00000006691648 @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @mutex=#<Logger::LogDevice::LogDeviceMutex:0x000000066915f8 @mon_owner=nil, @mon_count=0, @mon_mutex=#<Mutex:0x00000006691558>>>>, :password_prompt=>#<Net::SSH::Prompt:0x00000006691530>, :user=>"ubuntu"}>:/tmp/kitchen/modules: 0.00 sec
+I, [2017-05-12T20:38:22.158047 #5574]  INFO -- cmdbuild-ubuntu: [SFTP] Time taken to upload /tmp/cmdbuild-ubuntu-sandbox-20170512-5574-10lbp0z/callback_plugins to ubuntu@ec2-34-201-112-113.compute-1.amazonaws.com<{:user_known_hosts_file=>"/dev/null", :paranoid=>false, :port=>22, :compression=>false, :compression_level=>0, :keepalive=>true, :keepalive_interval=>60, :timeout=>15, :keys_only=>true, :keys=>["/var/jenkins_home/.ssh/apcela-cmdbuild.pem"], :auth_methods=>["publickey"], :logger=>#<Logger:0x000000066916c0 @progname=nil, @level=4, @default_formatter=#<Logger::Formatter:0x00000006691698 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x00000006691648 @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @mutex=#<Logger::LogDevice::LogDeviceMutex:0x000000066915f8 @mon_owner=nil, @mon_count=0, @mon_mutex=#<Mutex:0x00000006691558>>>>, :password_prompt=>#<Net::SSH::Prompt:0x00000006691530>, :user=>"ubuntu"}>:/tmp/kitchen/callback_plugins: 0.00 sec
+I, [2017-05-12T20:38:22.160652 #5574]  INFO -- cmdbuild-ubuntu: [SFTP] Time taken to upload /tmp/cmdbuild-ubuntu-sandbox-20170512-5574-10lbp0z/group_vars to ubuntu@ec2-34-201-112-113.compute-1.amazonaws.com<{:user_known_hosts_file=>"/dev/null", :paranoid=>false, :port=>22, :compression=>false, :compression_level=>0, :keepalive=>true, :keepalive_interval=>60, :timeout=>15, :keys_only=>true, :keys=>["/var/jenkins_home/.ssh/apcela-cmdbuild.pem"], :auth_methods=>["publickey"], :logger=>#<Logger:0x000000066916c0 @progname=nil, @level=4, @default_formatter=#<Logger::Formatter:0x00000006691698 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x00000006691648 @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @mutex=#<Logger::LogDevice::LogDeviceMutex:0x000000066915f8 @mon_owner=nil, @mon_count=0, @mon_mutex=#<Mutex:0x00000006691558>>>>, :password_prompt=>#<Net::SSH::Prompt:0x00000006691530>, :user=>"ubuntu"}>:/tmp/kitchen/group_vars: 0.00 sec
+I, [2017-05-12T20:38:22.164149 #5574]  INFO -- cmdbuild-ubuntu: [SFTP] Time taken to upload /tmp/cmdbuild-ubuntu-sandbox-20170512-5574-10lbp0z/hosts to ubuntu@ec2-34-201-112-113.compute-1.amazonaws.com<{:user_known_hosts_file=>"/dev/null", :paranoid=>false, :port=>22, :compression=>false, :compression_level=>0, :keepalive=>true, :keepalive_interval=>60, :timeout=>15, :keys_only=>true, :keys=>["/var/jenkins_home/.ssh/apcela-cmdbuild.pem"], :auth_methods=>["publickey"], :logger=>#<Logger:0x000000066916c0 @progname=nil, @level=4, @default_formatter=#<Logger::Formatter:0x00000006691698 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x00000006691648 @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @mutex=#<Logger::LogDevice::LogDeviceMutex:0x000000066915f8 @mon_owner=nil, @mon_count=0, @mon_mutex=#<Mutex:0x00000006691558>>>>, :password_prompt=>#<Net::SSH::Prompt:0x00000006691530>, :user=>"ubuntu"}>:/tmp/kitchen/hosts: 0.00 sec
+I, [2017-05-12T20:38:22.166847 #5574]  INFO -- cmdbuild-ubuntu: [SFTP] Time taken to upload /tmp/cmdbuild-ubuntu-sandbox-20170512-5574-10lbp0z/ssh_private_keys to ubuntu@ec2-34-201-112-113.compute-1.amazonaws.com<{:user_known_hosts_file=>"/dev/null", :paranoid=>false, :port=>22, :compression=>false, :compression_level=>0, :keepalive=>true, :keepalive_interval=>60, :timeout=>15, :keys_only=>true, :keys=>["/var/jenkins_home/.ssh/apcela-cmdbuild.pem"], :auth_methods=>["publickey"], :logger=>#<Logger:0x000000066916c0 @progname=nil, @level=4, @default_formatter=#<Logger::Formatter:0x00000006691698 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x00000006691648 @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @mutex=#<Logger::LogDevice::LogDeviceMutex:0x000000066915f8 @mon_owner=nil, @mon_count=0, @mon_mutex=#<Mutex:0x00000006691558>>>>, :password_prompt=>#<Net::SSH::Prompt:0x00000006691530>, :user=>"ubuntu"}>:/tmp/kitchen/ssh_private_keys: 0.00 sec
+I, [2017-05-12T20:38:22.170580 #5574]  INFO -- cmdbuild-ubuntu: [SFTP] Time taken to upload /tmp/cmdbuild-ubuntu-sandbox-20170512-5574-10lbp0z/host_vars to ubuntu@ec2-34-201-112-113.compute-1.amazonaws.com<{:user_known_hosts_file=>"/dev/null", :paranoid=>false, :port=>22, :compression=>false, :compression_level=>0, :keepalive=>true, :keepalive_interval=>60, :timeout=>15, :keys_only=>true, :keys=>["/var/jenkins_home/.ssh/apcela-cmdbuild.pem"], :auth_methods=>["publickey"], :logger=>#<Logger:0x000000066916c0 @progname=nil, @level=4, @default_formatter=#<Logger::Formatter:0x00000006691698 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x00000006691648 @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @mutex=#<Logger::LogDevice::LogDeviceMutex:0x000000066915f8 @mon_owner=nil, @mon_count=0, @mon_mutex=#<Mutex:0x00000006691558>>>>, :password_prompt=>#<Net::SSH::Prompt:0x00000006691530>, :user=>"ubuntu"}>:/tmp/kitchen/host_vars: 0.00 sec
+I, [2017-05-12T20:38:22.173177 #5574]  INFO -- cmdbuild-ubuntu: [SFTP] Time taken to upload /tmp/cmdbuild-ubuntu-sandbox-20170512-5574-10lbp0z/lookup_plugins to ubuntu@ec2-34-201-112-113.compute-1.amazonaws.com<{:user_known_hosts_file=>"/dev/null", :paranoid=>false, :port=>22, :compression=>false, :compression_level=>0, :keepalive=>true, :keepalive_interval=>60, :timeout=>15, :keys_only=>true, :keys=>["/var/jenkins_home/.ssh/apcela-cmdbuild.pem"], :auth_methods=>["publickey"], :logger=>#<Logger:0x000000066916c0 @progname=nil, @level=4, @default_formatter=#<Logger::Formatter:0x00000006691698 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x00000006691648 @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @mutex=#<Logger::LogDevice::LogDeviceMutex:0x000000066915f8 @mon_owner=nil, @mon_count=0, @mon_mutex=#<Mutex:0x00000006691558>>>>, :password_prompt=>#<Net::SSH::Prompt:0x00000006691530>, :user=>"ubuntu"}>:/tmp/kitchen/lookup_plugins: 0.00 sec
+I, [2017-05-12T20:38:22.178761 #5574]  INFO -- cmdbuild-ubuntu: [SFTP] Time taken to upload /tmp/cmdbuild-ubuntu-sandbox-20170512-5574-10lbp0z/cmdbuild.yml to ubuntu@ec2-34-201-112-113.compute-1.amazonaws.com<{:user_known_hosts_file=>"/dev/null", :paranoid=>false, :port=>22, :compression=>false, :compression_level=>0, :keepalive=>true, :keepalive_interval=>60, :timeout=>15, :keys_only=>true, :keys=>["/var/jenkins_home/.ssh/apcela-cmdbuild.pem"], :auth_methods=>["publickey"], :logger=>#<Logger:0x000000066916c0 @progname=nil, @level=4, @default_formatter=#<Logger::Formatter:0x00000006691698 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x00000006691648 @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @mutex=#<Logger::LogDevice::LogDeviceMutex:0x000000066915f8 @mon_owner=nil, @mon_count=0, @mon_mutex=#<Mutex:0x00000006691558>>>>, :password_prompt=>#<Net::SSH::Prompt:0x00000006691530>, :user=>"ubuntu"}>:/tmp/kitchen/cmdbuild.yml: 0.00 sec
+I, [2017-05-12T20:38:22.181392 #5574]  INFO -- cmdbuild-ubuntu: [SFTP] Time taken to upload /tmp/cmdbuild-ubuntu-sandbox-20170512-5574-10lbp0z/filter_plugins to ubuntu@ec2-34-201-112-113.compute-1.amazonaws.com<{:user_known_hosts_file=>"/dev/null", :paranoid=>false, :port=>22, :compression=>false, :compression_level=>0, :keepalive=>true, :keepalive_interval=>60, :timeout=>15, :keys_only=>true, :keys=>["/var/jenkins_home/.ssh/apcela-cmdbuild.pem"], :auth_methods=>["publickey"], :logger=>#<Logger:0x000000066916c0 @progname=nil, @level=4, @default_formatter=#<Logger::Formatter:0x00000006691698 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x00000006691648 @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @mutex=#<Logger::LogDevice::LogDeviceMutex:0x000000066915f8 @mon_owner=nil, @mon_count=0, @mon_mutex=#<Mutex:0x00000006691558>>>>, :password_prompt=>#<Net::SSH::Prompt:0x00000006691530>, :user=>"ubuntu"}>:/tmp/kitchen/filter_plugins: 0.00 sec
+I, [2017-05-12T20:38:22.184025 #5574]  INFO -- cmdbuild-ubuntu: [SFTP] Time taken to upload /tmp/cmdbuild-ubuntu-sandbox-20170512-5574-10lbp0z/library to ubuntu@ec2-34-201-112-113.compute-1.amazonaws.com<{:user_known_hosts_file=>"/dev/null", :paranoid=>false, :port=>22, :compression=>false, :compression_level=>0, :keepalive=>true, :keepalive_interval=>60, :timeout=>15, :keys_only=>true, :keys=>["/var/jenkins_home/.ssh/apcela-cmdbuild.pem"], :auth_methods=>["publickey"], :logger=>#<Logger:0x000000066916c0 @progname=nil, @level=4, @default_formatter=#<Logger::Formatter:0x00000006691698 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x00000006691648 @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @mutex=#<Logger::LogDevice::LogDeviceMutex:0x000000066915f8 @mon_owner=nil, @mon_count=0, @mon_mutex=#<Mutex:0x00000006691558>>>>, :password_prompt=>#<Net::SSH::Prompt:0x00000006691530>, :user=>"ubuntu"}>:/tmp/kitchen/library: 0.00 sec
+I, [2017-05-12T20:38:22.447627 #5574]  INFO -- cmdbuild-ubuntu: [1;35m [WARNING]: Found both group and host with same name: localhost[0m
+I, [2017-05-12T20:38:22.448497 #5574]  INFO -- cmdbuild-ubuntu: [1;35m[0m
+I, [2017-05-12T20:38:22.543767 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:38:22.544101 #5574]  INFO -- cmdbuild-ubuntu: PLAY [localhost] ***************************************************************
+I, [2017-05-12T20:38:22.563853 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:38:22.564129 #5574]  INFO -- cmdbuild-ubuntu: TASK [Gathering Facts] *********************************************************
+I, [2017-05-12T20:38:23.066888 #5574]  INFO -- cmdbuild-ubuntu: [0;32mok: [localhost][0m
+I, [2017-05-12T20:38:23.068696 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:38:23.068955 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Install add-apt-repostory] ************************************
+I, [2017-05-12T20:38:23.542568 #5574]  INFO -- cmdbuild-ubuntu: [0;32mok: [localhost][0m
+I, [2017-05-12T20:38:23.544281 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:38:23.545036 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Add Oracle Java Repository] ***********************************
+I, [2017-05-12T20:38:28.677683 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:38:28.680155 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:38:28.680415 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Accept Java 8 License] ****************************************
+I, [2017-05-12T20:38:29.112405 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:38:29.114161 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:38:29.114970 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Install Oracle Java 8] ****************************************
+I, [2017-05-12T20:39:13.314990 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost] => (item=[u'oracle-java8-installer', u'ca-certificates', u'oracle-java8-set-default'])[0m
+I, [2017-05-12T20:39:13.315087 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:13.315310 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Download tomcat] **********************************************
+I, [2017-05-12T20:39:15.141037 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:39:15.142758 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:15.142985 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : opt directory] ************************************************
+I, [2017-05-12T20:39:15.352715 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:39:15.354373 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:15.354621 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Extract tomcat] ***********************************************
+I, [2017-05-12T20:39:15.696849 #5574]  INFO -- cmdbuild-ubuntu: [1;35m [WARNING]: Consider using unarchive module rather than running tar[0m
+I, [2017-05-12T20:39:15.697657 #5574]  INFO -- cmdbuild-ubuntu: [1;35m[0m
+I, [2017-05-12T20:39:15.698295 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:39:15.698774 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:15.699024 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : JDBC] *********************************************************
+I, [2017-05-12T20:39:17.021901 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:39:17.023683 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:17.023956 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : add group "tomcat"] *******************************************
+I, [2017-05-12T20:39:17.336450 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:39:17.338166 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:17.338405 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : add user "tomcat"] ********************************************
+I, [2017-05-12T20:39:17.638861 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:39:17.640598 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:17.640847 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Change ownership of Tomcat installation] **********************
+I, [2017-05-12T20:39:17.810931 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:39:17.812657 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:17.812905 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Remove docs apps] *********************************************
+I, [2017-05-12T20:39:17.924570 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:39:17.926302 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:17.926545 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Remove examples apps] *****************************************
+I, [2017-05-12T20:39:18.041063 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:39:18.042743 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:18.042986 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : system directory] *********************************************
+I, [2017-05-12T20:39:18.150365 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:39:18.154636 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:18.154908 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Add tomcat systemd unit file] *********************************
+I, [2017-05-12T20:39:18.531589 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:39:18.533347 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:18.533596 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : systemd daemon-reload] ****************************************
+I, [2017-05-12T20:39:18.712704 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:39:18.716917 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:18.717182 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Start tomcat] *************************************************
+I, [2017-05-12T20:39:19.051164 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:39:19.053111 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:19.053375 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : wait for tomcat to start] *************************************
+I, [2017-05-12T20:39:21.503976 #5574]  INFO -- cmdbuild-ubuntu: [0;32mok: [localhost][0m
+I, [2017-05-12T20:39:21.505693 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:21.505963 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Postgres] *****************************************************
+I, [2017-05-12T20:39:21.728819 #5574]  INFO -- cmdbuild-ubuntu: [0;31mfatal: [localhost]: FAILED! => {"changed": false, "failed": true, "msg": "file (/usr/pgsql-9.4/bin/postgres) is absent, cannot continue", "path": "/usr/pgsql-9.4/bin/postgres", "state": "absent"}[0m
+I, [2017-05-12T20:39:21.729582 #5574]  INFO -- cmdbuild-ubuntu: [0;36m...ignoring[0m
+I, [2017-05-12T20:39:21.730598 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:21.730850 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Add pgdg apt key] *********************************************
+I, [2017-05-12T20:39:22.977291 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:39:22.979042 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:22.979291 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Add pgdg apt repository] **************************************
+I, [2017-05-12T20:39:27.380446 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:39:27.382129 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:27.382377 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Install postgresql] *******************************************
+I, [2017-05-12T20:39:40.895895 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost] => (item=[u'sudo', u'libpq-dev', u'postgresql-client', u'postgresql-contrib-9.4', u'postgresql-9.4', u'python-psycopg2'])[0m
+I, [2017-05-12T20:39:40.898817 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:40.899046 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Postgres postgresql.conf] *************************************
+I, [2017-05-12T20:39:41.116210 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost] => (item={u'regexp': u"^#listen_addresses = 'localhost'", u'replace': u"listen_addresses = '*'"})[0m
+I, [2017-05-12T20:39:41.117968 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:41.118189 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Postgres pg_hba.conf] *****************************************
+I, [2017-05-12T20:39:41.344717 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:39:41.346421 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:41.346666 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Postgres] *****************************************************
+I, [2017-05-12T20:39:41.476298 #5574]  INFO -- cmdbuild-ubuntu: [0;32mok: [localhost][0m
+I, [2017-05-12T20:39:41.478026 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:41.478269 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Change password for postgres] *********************************
+I, [2017-05-12T20:39:41.648362 #5574]  INFO -- cmdbuild-ubuntu: [1;35m [WARNING]: Consider using 'become', 'become_method', and 'become_user' rather[0m
+I, [2017-05-12T20:39:41.649185 #5574]  INFO -- cmdbuild-ubuntu: [1;35mthan running sudo[0m
+I, [2017-05-12T20:39:41.649828 #5574]  INFO -- cmdbuild-ubuntu: [1;35m[0m
+I, [2017-05-12T20:39:41.650480 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:39:41.650926 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:41.651177 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Postgres restart] *********************************************
+I, [2017-05-12T20:39:44.969294 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:39:44.973300 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:44.973529 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : unzip] ********************************************************
+I, [2017-05-12T20:39:45.318146 #5574]  INFO -- cmdbuild-ubuntu: [0;32mok: [localhost][0m
+I, [2017-05-12T20:39:45.320750 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:39:45.321019 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : CMDBuild/Shark] ***********************************************
+I, [2017-05-12T20:39:49.968721 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost] => (item=https://sourceforge.net/projects/cmdbuild/files/2.4.3/cmdbuild-2.4.3.zip)[0m
+I, [2017-05-12T20:40:11.872840 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost] => (item=https://sourceforge.net/projects/cmdbuild/files/2.4.3/shark-cmdbuild-2.4.3.zip)[0m
+I, [2017-05-12T20:40:11.874563 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:40:11.876256 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : CMDBuild/Shark copy] ******************************************
+I, [2017-05-12T20:40:13.980352 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost] => (item={u'dest': u'/opt/tomcat/webapps/cmdbuild.war', u'src': u'/tmp/cmdbuild-2.4.3/cmdbuild-2.4.3.war'})[0m
+I, [2017-05-12T20:40:14.948096 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost] => (item={u'dest': u'/opt/tomcat/webapps/shark.war', u'src': u'/tmp/shark-cmdbuild-2.4.3/cmdbuild-shark-server-2.4.3.war'})[0m
+I, [2017-05-12T20:40:14.949719 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:40:14.950569 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : wait_for] *****************************************************
+I, [2017-05-12T20:40:54.151115 #5574]  INFO -- cmdbuild-ubuntu: [0;32mok: [localhost][0m
+I, [2017-05-12T20:40:54.156207 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:40:54.156443 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Shark META-INF/context.xml] ***********************************
+I, [2017-05-12T20:40:54.447329 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:40:54.449029 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:40:54.449261 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : wait_for] *****************************************************
+I, [2017-05-12T20:40:54.691024 #5574]  INFO -- cmdbuild-ubuntu: [0;32mok: [localhost][0m
+I, [2017-05-12T20:40:54.692823 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:40:54.693088 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : CMDBuild] *****************************************************
+I, [2017-05-12T20:40:54.918086 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:40:54.923886 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:40:54.924162 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Tomcat stop] **************************************************
+I, [2017-05-12T20:40:56.518457 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:40:56.520259 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:40:56.520521 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Start Tomcat] *************************************************
+I, [2017-05-12T20:40:56.667465 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:40:56.669273 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:40:56.669542 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : wait for tomcat to start] *************************************
+I, [2017-05-12T20:40:58.894721 #5574]  INFO -- cmdbuild-ubuntu: [0;32mok: [localhost][0m
+I, [2017-05-12T20:40:58.898707 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:40:58.898969 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Extract patch] ************************************************
+I, [2017-05-12T20:41:00.911035 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost] => (item=https://sourceforge.net/projects/cmdbuild/files/2.4.3/cmdbuild-ready2use-1.1.zip/download)[0m
+I, [2017-05-12T20:41:00.914686 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:41:00.918794 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Move libs] ****************************************************
+I, [2017-05-12T20:41:01.207080 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost] => (item=pdfbox-2.0.2.jar)[0m
+I, [2017-05-12T20:41:01.412501 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost] => (item=javase-2.1.jar)[0m
+I, [2017-05-12T20:41:01.632309 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost] => (item=core-2.1.jar)[0m
+I, [2017-05-12T20:41:01.637400 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:41:01.638242 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Tomcat stop] **************************************************
+I, [2017-05-12T20:41:03.058931 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:41:03.060729 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:41:03.060984 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Create database cmdbuild] *************************************
+I, [2017-05-12T20:41:03.785756 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:41:03.789498 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:41:03.789789 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : install pip] **************************************************
+I, [2017-05-12T20:41:22.834091 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:41:22.835979 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:41:22.836205 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Pexpect library] **********************************************
+I, [2017-05-12T20:41:24.699439 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:41:24.701200 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:41:24.701447 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : permissions] **************************************************
+I, [2017-05-12T20:41:25.199096 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:41:25.200810 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:41:25.201066 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : permissions sql] **********************************************
+I, [2017-05-12T20:41:25.309743 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:41:25.311502 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:41:25.311761 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Shark schema] *************************************************
+I, [2017-05-12T20:41:25.580114 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:41:25.581838 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:41:25.582097 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : expect] *******************************************************
+I, [2017-05-12T20:41:48.145541 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:41:48.147316 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:41:48.150518 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Fix permissions] **********************************************
+I, [2017-05-12T20:41:48.715667 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:41:48.717453 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:41:48.717710 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : Start Tomcat] *************************************************
+I, [2017-05-12T20:41:48.871093 #5574]  INFO -- cmdbuild-ubuntu: [0;33mchanged: [localhost][0m
+I, [2017-05-12T20:41:48.872903 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:41:48.873138 #5574]  INFO -- cmdbuild-ubuntu: TASK [cmdbuild : wait for tomcat to start] *************************************
+I, [2017-05-12T20:41:51.111082 #5574]  INFO -- cmdbuild-ubuntu: [0;32mok: [localhost][0m
+I, [2017-05-12T20:41:51.114947 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:41:51.115222 #5574]  INFO -- cmdbuild-ubuntu: PLAY RECAP *********************************************************************
+I, [2017-05-12T20:41:51.115582 #5574]  INFO -- cmdbuild-ubuntu: [0;33mlocalhost[0m                  : [0;32mok=51  [0m [0;33mchanged=41  [0m unreachable=0    failed=0   
+I, [2017-05-12T20:41:51.116429 #5574]  INFO -- cmdbuild-ubuntu: 
+I, [2017-05-12T20:41:51.168239 #5574]  INFO -- cmdbuild-ubuntu: Finished converging <cmdbuild-ubuntu> (4m5.18s).
+I, [2017-05-12T20:41:51.168449 #5574]  INFO -- cmdbuild-ubuntu: -----> Setting up <cmdbuild-ubuntu>...
+I, [2017-05-12T20:41:51.169124 #5574]  INFO -- cmdbuild-ubuntu: Finished setting up <cmdbuild-ubuntu> (0m0.00s).
+I, [2017-05-12T20:41:51.169298 #5574]  INFO -- cmdbuild-ubuntu: -----> Verifying <cmdbuild-ubuntu>...
+I, [2017-05-12T20:41:51.172104 #5574]  INFO -- cmdbuild-ubuntu: Preparing files for transfer
+I, [2017-05-12T20:41:51.172519 #5574]  INFO -- cmdbuild-ubuntu: Transferring files to <cmdbuild-ubuntu>
+I, [2017-05-12T20:41:51.174910 #5574]  INFO -- cmdbuild-ubuntu: Finished verifying <cmdbuild-ubuntu> (0m0.00s).

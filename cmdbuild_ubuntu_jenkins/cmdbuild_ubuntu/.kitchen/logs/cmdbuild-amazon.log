@@ -1,0 +1,3 @@
+I, [2017-05-11T19:54:31.803301 #21159]  INFO -- cmdbuild-amazon: -----> Destroying <cmdbuild-amazon>...
+I, [2017-05-11T19:54:32.196287 #21159]  INFO -- cmdbuild-amazon: EC2 instance <i-004992ded81536d26> destroyed.
+I, [2017-05-11T19:54:32.196805 #21159]  INFO -- cmdbuild-amazon: Finished destroying <cmdbuild-amazon> (0m0.39s).

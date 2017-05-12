@@ -1,0 +1,30 @@
+I, [2017-05-12T02:01:27.863242 #28929]  INFO -- Kitchen: -----> Starting Kitchen (v1.16.0)
+D, [2017-05-12T02:01:27.863454 #28929] DEBUG -- Kitchen: ------Exception-------
+D, [2017-05-12T02:01:27.863486 #28929] DEBUG -- Kitchen: Class: Kitchen::UserError
+D, [2017-05-12T02:01:27.863509 #28929] DEBUG -- Kitchen: Message: Kitchen YAML file /home/gleb/cmdbuild/roles/cmdbuild/tasks/.kitchen.yml does not exist.
+D, [2017-05-12T02:01:27.863531 #28929] DEBUG -- Kitchen: ----------------------
+D, [2017-05-12T02:01:27.863551 #28929] DEBUG -- Kitchen: ------Backtrace-------
+D, [2017-05-12T02:01:27.863571 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/loader/yaml.rb:71:in `read'
+D, [2017-05-12T02:01:27.863592 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/config.rb:152:in `data'
+D, [2017-05-12T02:01:27.863612 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/config.rb:131:in `suites'
+D, [2017-05-12T02:01:27.863641 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/config.rb:182:in `filter_instances'
+D, [2017-05-12T02:01:27.863662 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/config.rb:141:in `build_instances'
+D, [2017-05-12T02:01:27.863682 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/config.rb:117:in `instances'
+D, [2017-05-12T02:01:27.863702 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:112:in `filtered_instances'
+D, [2017-05-12T02:01:27.863722 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:142:in `parse_subcommand'
+D, [2017-05-12T02:01:27.863742 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command/action.rb:35:in `block in call'
+D, [2017-05-12T02:01:27.863762 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+D, [2017-05-12T02:01:27.863782 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command/action.rb:34:in `call'
+D, [2017-05-12T02:01:27.863805 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/cli.rb:53:in `perform'
+D, [2017-05-12T02:01:27.863825 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/cli.rb:187:in `block (2 levels) in <class:CLI>'
+D, [2017-05-12T02:01:27.863846 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/thor-0.19.1/lib/thor/command.rb:27:in `run'
+D, [2017-05-12T02:01:27.863865 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/thor-0.19.1/lib/thor/invocation.rb:126:in `invoke_command'
+D, [2017-05-12T02:01:27.863885 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/cli.rb:334:in `invoke_task'
+D, [2017-05-12T02:01:27.863905 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/thor-0.19.1/lib/thor.rb:359:in `dispatch'
+D, [2017-05-12T02:01:27.863925 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/thor-0.19.1/lib/thor/base.rb:440:in `start'
+D, [2017-05-12T02:01:27.863945 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/bin/kitchen:13:in `block in <top (required)>'
+D, [2017-05-12T02:01:27.863964 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/errors.rb:171:in `with_friendly_errors'
+D, [2017-05-12T02:01:27.863984 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/bin/kitchen:13:in `<top (required)>'
+D, [2017-05-12T02:01:27.864010 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/bin/kitchen:22:in `load'
+D, [2017-05-12T02:01:27.864030 #28929] DEBUG -- Kitchen: /home/gleb/.rbenv/versions/2.4.0/bin/kitchen:22:in `<main>'
+D, [2017-05-12T02:01:27.864049 #28929] DEBUG -- Kitchen: ----End Backtrace-----
