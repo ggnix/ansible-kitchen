@@ -1,0 +1,9 @@
+# LibreNMS variables
+
+librenms_db_name: librenms
+librenms_db_user: librenms
+librenms_db_pass: password
+login_user: admin
+login_password: 1234
+login_email: example.com
+timezone: UTC

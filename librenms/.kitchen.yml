@@ -1,0 +1,41 @@
+---
+driver:
+  name: ec2
+  aws_ssh_key_id: gleb-cmdbuild
+  security_group_ids: ["sg-fd9f1896"]
+  region: eu-central-1
+  availability_zone: b
+  require_chef_omnibus: true
+  instance_type: t2.micro
+  associate_public_ip: true
+  shared_credentials_profile: gleb-cmdbuild  
+  provision_command:
+    - apt-get update -y
+    
+provisioner:
+  name: ansible_playbook
+  hosts: localhost
+  require_chef_for_busser: false
+  require_ruby_for_busser: true
+
+platforms:
+  - name: ubuntu
+    driver:
+      image_id: ami-060cde69
+    transport:
+      ssh_key: ~/.ec2/gleb-cmdbuild.pem
+      username: ubuntu
+verifier:
+name: inspec
+
+suites:
+   - name: librenms
+     provisioner:
+       playbook: librenms.yml
+     verifier:
+       patterns:
+         - test/integration/librenms/librenms_spec.rb
+     driver:
+       forward:
+         - 80:80
+       

@@ -1,0 +1,10 @@
+source "https://rubygems.org"
+
+gem "ec2"
+gem "ansible"
+gem "test-kitchen"
+gem "kitchen-ec2"
+gem "kitchen-ansible"
+gem "inspec"
+gem "kitchen-inspec"
+gem "kitchen-sync"
