@@ -23,8 +23,10 @@ platforms:
     driver:
       image_id: ami-060cde69
     transport:
+      name: sftp
       ssh_key: ~/.ssh/gleb-cmdbuild.pem
       username: ubuntu
+      max_ssh_sessions: 6
 verifier:
 name: inspec
 
