@@ -1,7 +1,7 @@
 ---
 driver:
   name: ec2
-  #aws_ssh_key_id: gleb-cmdbuild
+  aws_ssh_key_id: gleb-cmdbuild
   security_group_ids: ["sg-fd9f1896"]
   region: eu-central-1
   availability_zone: b
