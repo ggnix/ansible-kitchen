@@ -148,8 +148,12 @@
 
 - name: chmod distro
   file: 
-    path: '/usr/bin/distro'
+    path: '{{ item }}'
     mode: 'a+x'
+  with_items:
+    - '/usr/bin/distro'
+    - '/usr/bin/ping'
+    - '/usr/bin/fping'
 
 - name: Restart snmpd service
   become: yes
@@ -216,3 +220,11 @@
 - name: Restart apache2 service
   become: yes
   service: name=apache2 state=restarted
+
+- name: Chown librenms
+  file:
+    path: '/opt/librenms'
+    group: librenms
+    owner: librenms
+    recurse: yes
+   
