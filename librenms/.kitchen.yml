@@ -1,14 +1,14 @@
 ---
 driver:
   name: ec2
-  aws_ssh_key_id: gleb-cmdbuild
+  #aws_ssh_key_id: gleb-cmdbuild
   security_group_ids: ["sg-fd9f1896"]
   region: eu-central-1
   availability_zone: b
   require_chef_omnibus: true
   instance_type: t2.micro
   associate_public_ip: true
-  shared_credentials_profile: gleb-cmdbuild  
+  shared_credentials_profile: default  
   provision_command:
     - apt-get update -y
     
