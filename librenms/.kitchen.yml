@@ -23,7 +23,7 @@ platforms:
     driver:
       image_id: ami-060cde69
     transport:
-      ssh_key: ~/.ec2/gleb-cmdbuild.pem
+      ssh_key: ~/.ssh/gleb-cmdbuild.pem
       username: ubuntu
 verifier:
 name: inspec
