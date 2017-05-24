@@ -152,7 +152,6 @@
     mode: 'a+x'
   with_items:
     - '/usr/bin/distro'
-    - '/usr/bin/ping'
     - '/usr/bin/fping'
 
 - name: Restart snmpd service
