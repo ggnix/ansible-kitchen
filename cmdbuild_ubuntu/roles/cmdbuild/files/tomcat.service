@@ -7,7 +7,7 @@ RemainAfterExit=yes
 ExecStart=/opt/tomcat/bin/startup.sh
 ExecStop=/opt/tomcat/bin/shutdown.sh
 User=tomcat
-Group=root
+Group=tomcat
 
 [Install]
 WantedBy=multi-user.target
