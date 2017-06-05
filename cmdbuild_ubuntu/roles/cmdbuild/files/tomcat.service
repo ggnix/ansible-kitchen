@@ -6,7 +6,7 @@ Type=oneshot
 RemainAfterExit=yes
 ExecStart=/opt/tomcat/bin/startup.sh
 ExecStop=/opt/tomcat/bin/shutdown.sh
-User=root 
+User=tomcat
 Group=root
 
 [Install]
